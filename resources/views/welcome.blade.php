@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    ObjectSys
+                    ObjectSys agora vai
                 </div>
 
                 <div class="links">
