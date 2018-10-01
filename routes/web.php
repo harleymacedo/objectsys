@@ -12,5 +12,24 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
+
 });
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/listarobj', 'objetoController@listarObj');
+    Route::post('/cadastrarobj', 'objetoController@novoObj');
+    Route::post('/editarobj', 'objetoController@editarObj');
+    Route::post('/excluirobj', 'objetoController@excluirObj');
+
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
