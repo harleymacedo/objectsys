@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Estas crendenciais não batem com nossos registros .',
+    'failed' => 'Credênciais incorretas, favor verificar e tentar novamente.',
     'throttle' => 'Muitas tentativas de login. Por favor tente novamente em :seconds seconds.',
 
 ];
