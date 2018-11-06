@@ -1,0 +1,12 @@
+.style_card_login{
+    background-color: hsl(200, 13%, 95%);
+
+}
+.card{
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right: 10%;
+    box-shadow: 2px 2px 2px 2px rgb(180, 129, 18);
+
+}

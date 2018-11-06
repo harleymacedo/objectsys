@@ -1,0 +1,17 @@
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.content {
+    text-align: center;
+}
+.logo{
+    width: 80%;
+}
+.bg-color{
+    background-color: whitesmoke;
+    height: 100vh;
+}
