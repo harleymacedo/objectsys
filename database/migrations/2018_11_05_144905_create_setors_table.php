@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjetosTable extends Migration
+class CreateSetorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateObjetosTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('objetos'))
+        if (!Schema::hasTable('setors'))
         {
-            Schema::create('objetos', function (Blueprint $table) {
+            Schema::create('setors', function (Blueprint $table) {
                 $table->increments('id');
-                $table->string('nomeObj');
-                $table->string('descricaoObj');
-                $table->string('situacaoObj');
-                $table->string('categoriaObj');
+                $table->string('nomeSetor');
+                $table->string('descricoSetor');
+                $table->integer('responsavelSetor')->unsigned();
+                $table->foreign('responsavelSetor')->references('id')->on('users')->onDelete('cascade');
                 $table->timestamps();
             });
         }
@@ -33,6 +33,6 @@ class CreateObjetosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objetos');
+        Schema::dropIfExists('setors');
     }
 }
