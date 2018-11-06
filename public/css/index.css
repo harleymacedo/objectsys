@@ -12,6 +12,10 @@
     width: 80%;
 }
 .bg-color{
-    background-color: whitesmoke;
+    /* background-image: url('../images/bgtest2.jpg');
+    background-size: cover;
+    -webkit-backdrop-filter: blur(50px); */
+    background-color: #212529;
     height: 100vh;
 }
+

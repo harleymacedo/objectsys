@@ -24,6 +24,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editarobj', 'objetoController@editarObj');
     Route::post('/excluirobj', 'objetoController@excluirObj');
 
+    Route::get('/cadastrarsetor', 'setorController@indexSetor');
+    Route::post('/cadastrar', 'setorController@cadastrar');
+
+
 });
 
 Auth::routes();

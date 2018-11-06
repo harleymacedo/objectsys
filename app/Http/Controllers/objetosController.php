@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class objetosController extends Controller
 {
     private $objeto;
+
     public function __construct(objeto $objeto){
 
-        $this->objeto = objeto;
+        $this->objeto = $objeto;
 
     }
 
