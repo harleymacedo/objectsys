@@ -13,17 +13,14 @@ class CreateObjetosTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('objetos'))
-        {
-            Schema::create('objetos', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('nomeObj');
-                $table->string('descricaoObj');
-                $table->string('situacaoObj');
-                $table->string('categoriaObj');
-                $table->timestamps();
-            });
-        }
+        Schema::create('objetos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nomeObj');
+            $table->string('descricaoObj');
+            $table->string('situacaoObj');
+            $table->string('categoriaObj');
+            $table->timestamps();
+        });
     }
 
     /**
