@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\User;
 use DB;
+use APP\role_user;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -71,9 +72,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $id = DB::table('users')->max('id');
 
         $teste = DB::table('role_user')->insert(
-            ['user_email' => $data['email'], 'role_id' => '2']
+            ['user_id' => $id, 'role_id' => '2']
         );
 
         return $usuario;
