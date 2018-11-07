@@ -18,6 +18,7 @@
 
                     @can("reservar")
                             Você está logado como Usuário do sistema!
+                            <a href="/cadastrarsetor">Aqui</a>
                     @endcan
                     @can("editar")
                             Você está logado como Admin do sistema!
