@@ -12,11 +12,11 @@ class role_user extends Seeder
     public function run()
     {
         DB::table('role_user')->insert([
-            'user_email' => '1',
+            'user_email' => 'admin@email.com',
             'role_id' => '1'
         ]);
         DB::table('role_user')->insert([
-            'user_email' => '2',
+            'user_email' => 'usuario@email.com',
             'role_id' => '2'
         ]);
     }
