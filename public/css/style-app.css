@@ -5,9 +5,6 @@
     background-color: hsl(200, 13%, 95%);
     box-shadow: 0px 3px rgb(180, 129, 18);
 }
-.body-color{
-    background-color: rgba(255, 192, 57, 0.692);
-}
 .footer{
     position: absolute;
     background-color: #ffbe39 !important;

@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-app.css') }}" rel="stylesheet">
 </head>
-<body class="body-margin body-color">
+<body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel color-navbar fixed-top">
             <div class="container">
@@ -86,9 +86,11 @@
             @yield('content')
         </main>
 
+
     </div>
     <footer class="footer">
-       © 2018 Copyright: LaIS
+        © 2018 Copyright: LaIS
     </footer>
+
 </body>
 </html>

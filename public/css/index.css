@@ -4,7 +4,6 @@
     justify-content: center;
 }
 
-
 .content {
     text-align: center;
 }
@@ -21,10 +20,51 @@
 
 }
 .bg-color{
-    /* background-image: url('../images/bgtest2.jpg');
-    background-size: cover;
-    -webkit-backdrop-filter: blur(50px); */
     background-color: #ffffff;
-    height: 90vh;
+    margin-top: 20%;
 }
+
+@media(max-width: 600px) {
+    .logo_index{
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10%;
+
+    }
+    .logo_IFCE{
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10%;
+
+    }
+    .bg-color{
+        background-color: #ffffff;
+        margin-top: 50%;
+    }
+
+}
+@media(min-width: 610px) {
+    .logo_index{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10%;
+
+    }
+    .logo_IFCE{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10%;
+
+    }
+    .bg-color{
+        background-color: #ffffff;
+        margin-top: 50%;
+    }
+
+}
+
 
