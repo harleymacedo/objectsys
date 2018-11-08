@@ -1,5 +1,5 @@
 .logo{
-    width: 60%;
+    width: 70%;
 }
 .color-navbar{
     background-color: hsl(200, 13%, 95%);
@@ -8,4 +8,14 @@
 .body-color{
     background-color: rgba(255, 192, 57, 0.692);
 }
+.footer{
+    position: absolute;
+    background-color: #ffbe39 !important;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
 

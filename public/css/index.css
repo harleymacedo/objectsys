@@ -8,14 +8,23 @@
 .content {
     text-align: center;
 }
-.logo{
-    width: 80%;
+.logo_index{
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.logo_IFCE{
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
 }
 .bg-color{
     /* background-image: url('../images/bgtest2.jpg');
     background-size: cover;
     -webkit-backdrop-filter: blur(50px); */
-    background-color: #212529;
-    height: 100vh;
+    background-color: #ffffff;
+    height: 90vh;
 }
 

@@ -23,14 +23,24 @@
 </head>
 <body class="body-margin body-color">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel color-navbar">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel color-navbar fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="logo" src="{{ asset('images/logo_small.png') }}" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="row">
+                    <div class="col">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img class="logo" src="{{ asset('images/logo_small.png') }}" alt="logo">
+                        </a>
+
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                    </div>
+                </div>
+
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -75,6 +85,10 @@
         <main >
             @yield('content')
         </main>
+
     </div>
+    <footer class="footer">
+       © 2018 Copyright: LaIS
+    </footer>
 </body>
 </html>
