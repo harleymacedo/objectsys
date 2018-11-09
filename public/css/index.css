@@ -7,6 +7,11 @@
 .content {
     text-align: center;
 }
+.container_index{
+    margin-top: 20%;
+    margin-bottom: 20%;
+    height: 25vh;
+}
 .logo_index{
     width: 90%;
     margin-top: 20px;
@@ -21,50 +26,8 @@
 }
 .bg-color{
     background-color: #ffffff;
-    margin-top: 20%;
-}
-
-@media(max-width: 600px) {
-    .logo_index{
-        width: 70%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 10%;
-
-    }
-    .logo_IFCE{
-        width: 70%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 10%;
-
-    }
-    .bg-color{
-        background-color: #ffffff;
-        margin-top: 50%;
-    }
 
 }
-@media(min-width: 610px) {
-    .logo_index{
-        width: 100%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 10%;
 
-    }
-    .logo_IFCE{
-        width: 100%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 10%;
-
-    }
-    .bg-color{
-        background-color: #ffffff;
-        margin-top: 50%;
-    }
-
-}
 
 

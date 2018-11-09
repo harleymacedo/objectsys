@@ -9,7 +9,7 @@
                     <img class="logo_index" src="{{ asset('images/logo_big.png') }}" alt="logo">
                 </div>
                 <div class="col-sm-6">
-                    <img class="logo_IFCE" src="{{ asset('images/logo_ifce.png') }}" alt="logo">
+
                 </div>
             </div>
         </div>
