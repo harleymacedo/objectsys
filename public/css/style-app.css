@@ -8,8 +8,24 @@
 }
 
 .foot{
-    background-color: #ffbe39 !important;
+    background-color: #ffbe39bd;
     margin-top: 5%;
+    color: black;
+}
+.footer_copyright{
+    background-color: #e2b04bbd;
 }
 
+.texto{
+    line-height:1.3;
+}
+
+@media (max-width: 770px) {
+    .botão{
+        margin-left: 150px;
+    }
+    .logo{
+        width: 200%;
+    }
+}
 

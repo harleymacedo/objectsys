@@ -5,8 +5,9 @@
 .card{
     border-radius: 10px;
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-right: 10%;
+    margin-bottom: 5%;
     box-shadow: 2px 2px 2px 2px rgb(180, 129, 18);
 
 }

@@ -14,8 +14,11 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"> --}}
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,13 +29,13 @@
                 <nav class="navbar navbar-expand-md navbar-light navbar-laravel color-navbar">
                     <div class="container">
                         <div class="row">
-                            <div class="col">
+                            <div class="col justify-content-start">
                                 <a class="navbar-brand" href="{{ url('/') }}">
                                     <img class="logo" src="{{ asset('images/logo_small.png') }}" alt="logo">
                                 </a>
 
                             </div>
-                            <div class="col d-flex justify-content-end">
+                            <div class="botão col d-flex justify-content-end">
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
@@ -85,10 +88,10 @@
             <main>
                 @yield('content')
             </main>
-<!-- Footer -->
-<footer class="foot page-footer font-small teal pt-4">
+               <!-- Footer -->
+<footer class="foot page-footer font-small blue pt-4">
 
-        <!-- Footer Text -->
+        <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
 
           <!-- Grid row -->
@@ -98,8 +101,8 @@
             <div class="col-md-6 mt-md-0 mt-3">
 
               <!-- Content -->
-              <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae harum esse fugiat. Itaque, culpa?</p>
+              <h5 class="text-uppercase">Footer Content</h5>
+              <p>Here you can use rows and columns here to organize your footer content.</p>
 
             </div>
             <!-- Grid column -->
@@ -107,29 +110,66 @@
             <hr class="clearfix w-100 d-md-none pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-6 mb-md-0 mb-3">
+            <div class="col-md-3 mb-md-0 mb-3">
 
-              <!-- Content -->
-              <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
+                <!-- Links -->
+                <h5 class="text-uppercase">Equipe</h5>
 
-            </div>
-            <!-- Grid column -->
+                <ul class="list-unstyled texto">
+                  <li>
+                    <p >Harley Macêdo</p>
+                  </li>
+                  <li>
+                    <p >João Batista</p>
+                  </li>
+                  <li>
+                    <p >Lucas Eduardo</p>
+                  </li>
+                  <li>
+                    <p >Victor Hugo</p>
+                  </li>
+                </ul>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+
+                <!-- Links -->
+                <h5 class="text-uppercase">Contatos</h5>
+
+                <ul class="list-unstyled texto">
+                  <li>
+                    <p>Harley.ip@gmail.com</p>
+                  </li>
+                  <li>
+                    <p>juniorbj1993@gmail.com</p>
+                  </li>
+                  <li>
+                    <p>Lucas@lucas.com</p>
+                  </li>
+                  <li>
+                    <p>hugo.victor.n@gmail.com</p>
+                  </li>
+                </ul>
+
+              </div>
+              <!-- Grid column -->
 
           </div>
           <!-- Grid row -->
 
         </div>
-        <!-- Footer Text -->
+        <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+        <div class="footer_copyright footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="https://sites.google.com/site/laisifce/home">LaIS</a>
         </div>
         <!-- Copyright -->
 
       </footer>
       <!-- Footer -->
-
 </body>
 </html>
