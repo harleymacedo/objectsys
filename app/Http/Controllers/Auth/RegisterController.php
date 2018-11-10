@@ -72,6 +72,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
         $id = DB::table('users')->max('id');
 
         $teste = DB::table('role_user')->insert(

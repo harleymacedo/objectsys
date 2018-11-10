@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\setor;
+use App\User;
+use App\user_setor;
+use DB;
 
 class setorController extends Controller
 {
     private $setor;
+    private $user;
+    private $user_setor;
 
-    public function __construct(setor $setor){
+    public function __construct(setor $setor, User $user, user_setor $user_setor){
 
         $this->setor = $setor;
+        $this->user = $user;
 
     }
 
@@ -20,19 +26,21 @@ class setorController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function listarSetores (setor $setor)
+    public function indexSetor (setor $setor)
     {
-        $setores = $setor->all();
+        $users = DB::table('users')
+            ->join('setors', 'users.id', '=', 'setors.responsavelSetor')
+            ->select('users.nome', 'setors.nomeSetor','setors.descricoSetor','setors.id')
+            ->get();
 
-        return view('setores', compact('setores'));
+        return view('setores.listSetor', compact('users'));
     }
 
     public function novoSetor(Request $request){
 
-        $data_form = $request->only(['nomeSetor','descricaoSetor','responsavelSetor']);
+        $data_form = $request->only(['nomeSetor','descricoSetor','responsavelSetor']);
 
-
-        $insert = $this->objeto->insert($data_form);
+        $insert = $this->setor->insert($data_form);
         if ($insert) {
             return redirect('/home');
         }
@@ -41,19 +49,19 @@ class setorController extends Controller
         }
     }
 
-    public function editarSetor(Request $request){
+    public function editar(Request $request){
 
-        $data_form = $request->only(['nomeSetor','descricaoSetor','responsavelSetor']);
+        $data_form = $request->only(['id','nomeSetor','descricoSetor','responsavelSetor']);
 
-        $setor = $this->setor->find($data_form['setor_id']);
+        $setor = $this->setor->find('id');
 
         $update = $setor->update([
             'nomeSetor' => $data_form['nomeSetor'],
-            'descricaoSetor' => $data_form['descricaoSetor'],
+            'descricoSetor' => $data_form['descricoSetor'],
             'responsavelSetor' => $data_form['responsavelSetor'],
         ]);
         if ($update) {
-            return redirect('/home');
+            return redirect('/setores');
         }
         else {
             return redirect()->back();
@@ -65,6 +73,7 @@ class setorController extends Controller
         $data_form = $request->only(['setor_id']);
 
         $setor = $this->setor->find($data_form['setor_id']);
+
         $delete = $setor->delete();
         if ($delete) {
             return redirect('/home');
@@ -74,8 +83,20 @@ class setorController extends Controller
         }
     }
 
-    public function indexSetor(){
-        return view('setores.cadSetor');
+    public function cadSetor(){
+
+        $users = DB::table('users')->where('papel', '=', 'admin')->get();
+
+        return view('setores.cadSetor', compact('users'));
     }
 
+    public function updateSetor($id){
+
+        $setor = $this->setor->find($id);
+
+        $users = DB::table('users')->where('papel', '=', 'admin')->get();
+
+        return view('setores.updateSetor', compact('users','setor'));
+
+    }
 }
