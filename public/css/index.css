@@ -4,18 +4,35 @@
     justify-content: center;
 }
 
-
 .content {
     text-align: center;
 }
+<<<<<<< HEAD
 .logo_index{
     width: 80%;
+=======
+.container_index{
+    margin-top: 20%;
+    margin-bottom: 20%;
+    height: 25vh;
+}
+.logo_index{
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.logo_IFCE{
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+>>>>>>> ffcd86ff3c0c7e5295dfad88523be472d7972587
 }
 .bg-color{
-    /* background-image: url('../images/bgtest2.jpg');
-    background-size: cover;
-    -webkit-backdrop-filter: blur(50px); */
-    background-color: #212529;
-    height: 100vh;
+    background-color: #ffffff;
+
 }
+
+
 
