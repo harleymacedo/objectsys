@@ -16,6 +16,7 @@ class setorController extends Controller
 
     public function __construct(setor $setor, User $user, user_setor $user_setor){
 
+        $this->middleware('auth');
         $this->setor = $setor;
         $this->user = $user;
 
@@ -51,15 +52,16 @@ class setorController extends Controller
 
     public function editar(Request $request){
 
-        $data_form = $request->only(['id','nomeSetor','descricoSetor','responsavelSetor']);
+        $data_form = $request->only(['idSetor','nomeSetor','descricoSetor','responsavelSetor']);
 
-        $setor = $this->setor->find('id');
+        // $id_number = $data_form["idSetor"];
 
-        $update = $setor->update([
-            'nomeSetor' => $data_form['nomeSetor'],
-            'descricoSetor' => $data_form['descricoSetor'],
-            'responsavelSetor' => $data_form['responsavelSetor'],
-        ]);
+        // $setor = $this->setor->find('$id_number');
+
+       $update = DB::table('setors')
+            ->where('id', $data_form['idSetor'])
+            ->update(['nomeSetor' => $data_form['nomeSetor'],'descricoSetor' => $data_form['descricoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
+
         if ($update) {
             return redirect('/setores');
         }

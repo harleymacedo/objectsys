@@ -18,21 +18,24 @@
                 <div class="form-row">
                     <div class="form-group col-sm-10">
                         <label for="nomeSetor" class="font-weight-bold">Nome</label>
-                        <input name="nomeSetor" type="text" class="form-control" id="nomeSetor" placeholder="Nome do Setor" value="{{$setor->nomeSetor}}" required>
+                        <input name="nomeSetor" type="text" class="form-control" id="nomeSetor" placeholder="Nome do Setor" required>
                     </div>
-                        <label for="id" class="font-weight-bold">Id</label>
-                        <input name="id" type="number" class="form-control" id="id" value="{{$setor->id}}" required disabled>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input name="idSetor" type="number" class="form-control" value="{{$setor->id}}" required>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="descricoSetor" class="font-weight-bold">Descrição</label>
-                        <textarea name="descricoSetor" class="form-control" maxlength="500" id="descricoSetor" placeholder="Descrição do Setor" required>{{$setor->descricoSetor}}</textarea>
+                        <textarea name="descricoSetor" class="form-control" maxlength="500" id="descricoSetor" placeholder="Descrição do Setor" required></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-">
                         <label for="responsavelSetor" class="font-weight-bold">Responsável</label>
-                        <select class="form-control" name="responsavelSetor" id="responsavelSetor" default= "{{$setor->responsavelSetor}}" required>
+                        <select class="form-control" name="responsavelSetor" id="responsavelSetor" " required>
                             @foreach ($users as $user)
                             <option value="{{$user->id}}">{{$user->nome}}</option>
                             @endforeach
@@ -41,8 +44,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
-                        <button class="btn btn-success" type="submit">Atualizar</button>
-                        <button class="btn btn-danger" type="button">Cancelar</button>
+                            <input class="btn btn-success form-group" type="submit" value="Atualizar">
+                            <input class="btn btn-danger form-group" type="submit" value="Cancelar">
                     </div>
                 </div>
             </form>

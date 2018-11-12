@@ -27,7 +27,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cadastrarsetor', 'setorController@cadSetor');
     Route::post('/cadastrar', 'setorController@novoSetor');
     Route::get('/setores', 'setorController@indexSetor');
-    Route::any('/update/{id}','setorController@updateSetor');
+    Route::get('/update/{id}','setorController@updateSetor');
     Route::post('/editar', 'setorController@editar');
 
 
