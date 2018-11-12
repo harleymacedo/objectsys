@@ -101,8 +101,8 @@
             <div class="col-md-6 mt-md-0 mt-3">
 
               <!-- Content -->
-              <h5 class="text-uppercase">Footer Content</h5>
-              <p>Here you can use rows and columns here to organize your footer content.</p>
+              <h5 class="text-uppercase" style="color: #e65437">Descrição:</h5>
+              <p>Um sistema de reserva de materiais em conjunto com o rastreamento em tempo real dos objetos que podem ser deslocados, auxiliando os usuários (professores) na reserva e gerenciamento de recursos, evitando ainda a perda dos mesmos. </p>
 
             </div>
             <!-- Grid column -->
@@ -113,11 +113,14 @@
             <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase">Equipe</h5>
+                <h5 class="text-uppercase" style="color: #e65437">Equipe</h5>
 
                 <ul class="list-unstyled texto">
                   <li>
                     <p >Harley Macêdo</p>
+                  </li>
+                  <li>
+                    <p >Igor William</p>
                   </li>
                   <li>
                     <p >João Batista</p>
@@ -128,6 +131,7 @@
                   <li>
                     <p >Victor Hugo</p>
                   </li>
+
                 </ul>
 
               </div>
@@ -137,21 +141,25 @@
               <div class="col-md-3 mb-md-0 mb-3">
 
                 <!-- Links -->
-                <h5 class="text-uppercase">Contatos</h5>
+                <h5 class="text-uppercase" style="color: #e65437">Contatos</h5>
 
                 <ul class="list-unstyled texto">
                   <li>
                     <p>Harley.ip@gmail.com</p>
                   </li>
                   <li>
+                    <p>igorwm9@gmail.com</p>
+                  </li>
+                  <li>
                     <p>juniorbj1993@gmail.com</p>
                   </li>
                   <li>
-                    <p>Lucas@lucas.com</p>
+                    <p>lucasseduhh@gmail.com</p>
                   </li>
                   <li>
                     <p>hugo.victor.n@gmail.com</p>
                   </li>
+
                 </ul>
 
               </div>
