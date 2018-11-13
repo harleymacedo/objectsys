@@ -1,14 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+@can('editar')
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 <div class="container">
     <div class="row mt-4">
         <div class="col-sm-12">
             <span class="h1 mb-1 mt-1 float-left">Setores</span>
-            <a href="/cadastrarsetor" class="btn btn-outline-secondary mb-1 mt-1 float-right">Cadastrar Setor</a>
+            <a href="/cadastrar/setor" class="btn btn-outline-secondary mb-1 mt-1 float-right">Cadastrar Setor</a>
         </div>
     </div>
     <div class="row justify-content-center mb-1 mt-1">
@@ -46,8 +45,8 @@
                             <td>{{$setor->nome}}</td>
 
                             <td>
-                                <a href="/update/{{$setor->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                <a href="/delete/{{$setor->id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="/update/setor/{{$setor->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="/delete/setor/{{$setor->id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     </tbody>
@@ -56,4 +55,7 @@
         </div>
     </div>
 </div>
+@else
+<script>window.location = "/home";</script>
+@endcan
 @endsection

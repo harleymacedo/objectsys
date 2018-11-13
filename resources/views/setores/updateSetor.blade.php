@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center mb-5 card py-5">
         <div class="col-sm-12">
-            <form method="POST" action="/editar">
+            <form method="POST" action="/atualizar/setor">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="form-group col-sm-10">
@@ -45,7 +45,7 @@
                 <div class="form-row">
                     <div class="form-group col-sm-12">
                             <input class="btn btn-success form-group" type="submit" value="Atualizar">
-                            <input class="btn btn-danger form-group" type="submit" value="Cancelar">
+                            <input class="btn btn-danger form-group" type="" value="Cancelar">
                     </div>
                 </div>
             </form>
@@ -55,7 +55,7 @@
       </div>
 
 @else
-<h1>Voce nao tem premissao pra estar aqui...saia imediatamente (Temporário)</h1>
+    <script>window.location = "/home";</script>
 @endcan
 @endsection
 

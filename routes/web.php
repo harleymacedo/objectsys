@@ -24,12 +24,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editarobj', 'objetoController@editarObj');
     Route::post('/excluirobj', 'objetoController@excluirObj');
 
-    Route::get('/cadastrarsetor', 'setorController@cadSetor')->name('cadastrarsetor');
-    Route::post('/cadastrar', 'setorController@novoSetor');
+    Route::get('/cadastrar/setor', 'setorController@cadSetor')->name('cadastrarsetor');
+    Route::post('/salvar/setor', 'setorController@novoSetor');
     Route::get('/setores', 'setorController@indexSetor')->name('listarsetor');
-    Route::any('/update/{id}','setorController@updateSetor');
-    Route::post('/editar', 'setorController@editar');
-    Route::any('/delete/{id}', 'setorController@excluirSetor')->name('excluirsetor');
+    Route::any('/update/setor/{id}','setorController@updateSetor');
+    Route::post('/atualizar/setor', 'setorController@editar');
+    Route::any('/delete/setor/{id}', 'setorController@excluirSetor')->name('excluirsetor');
 
 
 });

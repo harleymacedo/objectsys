@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center mb-5 card py-5">
         <div class="col-sm-12">
-            <form method="POST" action="/cadastrar">
+            <form method="POST" action="/salvar/setor">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="form-group col-sm-12">
@@ -50,7 +50,10 @@
       </div>
 
 @else
-<h1>Voce nao tem premissao pra estar aqui...saia imediatamente (Temporário)</h1>
+
+    <script>
+        window.location = "/home";
+    </script>
 @endcan
 @endsection
 
