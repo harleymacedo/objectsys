@@ -24,9 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editarobj', 'objetoController@editarObj');
     Route::post('/excluirobj', 'objetoController@excluirObj');
 
-    Route::get('/cadastrarsetor', 'setorController@cadSetor')->name('cadastrarsetor');
+    Route::get('/cadastrarsetor', 'setorController@cadSetor');
     Route::post('/cadastrar', 'setorController@novoSetor');
-    Route::get('/setores', 'setorController@indexSetor')->name('listarsetor');
+    Route::get('/setores', 'setorController@indexSetor');
     Route::any('/update/{id}','setorController@updateSetor');
     Route::post('/editar', 'setorController@editar');
 
