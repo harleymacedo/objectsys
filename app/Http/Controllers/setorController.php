@@ -29,12 +29,12 @@ class setorController extends Controller
 
     public function indexSetor (setor $setor)
     {
-        $users = DB::table('users')
+        $setors = DB::table('users')
             ->join('setors', 'users.id', '=', 'setors.responsavelSetor')
-            ->select('users.nome', 'setors.nomeSetor','setors.descricoSetor','setors.id')
+            ->select('users.nome', 'setors.nomeSetor','setors.descricoSetor','setors.id')->orderBy('nomeSetor')
             ->get();
 
-        return view('setores.listSetor', compact('users'));
+        return view('setores.listSetor', compact('setors'));
     }
 
     public function novoSetor(Request $request){
@@ -43,7 +43,7 @@ class setorController extends Controller
 
         $insert = $this->setor->insert($data_form);
         if ($insert) {
-            return redirect('/home');
+            return redirect('/setores');
         }
         else {
             return redirect()->back();
@@ -53,10 +53,6 @@ class setorController extends Controller
     public function editar(Request $request){
 
         $data_form = $request->only(['idSetor','nomeSetor','descricoSetor','responsavelSetor']);
-
-        // $id_number = $data_form["idSetor"];
-
-        // $setor = $this->setor->find('$id_number');
 
        $update = DB::table('setors')
             ->where('id', $data_form['idSetor'])
@@ -70,15 +66,12 @@ class setorController extends Controller
         }
     }
 
-    public function excluirSetor(Request $request){
+    public function excluirSetor($id){
 
-        $data_form = $request->only(['setor_id']);
+        $delete = DB::table('setors')->where('id', '=', $id)->delete();
 
-        $setor = $this->setor->find($data_form['setor_id']);
-
-        $delete = $setor->delete();
         if ($delete) {
-            return redirect('/home');
+            return redirect('/setores');
         }
         else {
             return redirect()->back();

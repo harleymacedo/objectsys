@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/setores', 'setorController@indexSetor')->name('listarsetor');
     Route::any('/update/{id}','setorController@updateSetor');
     Route::post('/editar', 'setorController@editar');
+    Route::any('/delete/{id}', 'setorController@excluirSetor')->name('excluirsetor');
 
 
 });

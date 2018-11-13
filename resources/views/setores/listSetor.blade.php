@@ -37,17 +37,17 @@
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
-                @foreach ($users as $user)
+                @foreach ($setors as $setor)
                     <tbody>
                         <tr>
-                            <th scope="row">{{$user->nomeSetor}}</th>
-                            <td>{{$user->descricoSetor}}</td>
+                            <th scope="row">{{$setor->nomeSetor}}</th>
+                            <td>{{$setor->descricoSetor}}</td>
 
-                            <td>{{$user->nome}}</td>
+                            <td>{{$setor->nome}}</td>
 
                             <td>
-                                <a href="/update/{{$user->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                <a href="/delete/{{$user->id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="/update/{{$setor->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="" class="btn btn-danger" onclick="funcao1({{$setor->id}})"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     </tbody>
