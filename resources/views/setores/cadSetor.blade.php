@@ -39,8 +39,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
-                        <button class="btn btn-success" type="submit">Cadastrar</button>
-                        <button class="btn btn-danger" type="button">Cancelar</button>
+                        <button class="btn btn-success form-group" type="submit">Cadastrar</button>
+                        <input class="btn btn-danger form-group" type="button" value="Cancelar" onclick="location.href='/setores'">
                     </div>
                 </div>
             </form>

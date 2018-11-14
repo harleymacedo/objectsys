@@ -47,7 +47,7 @@
                 <div class="form-row">
                     <div class="form-group col-sm-12">
                             <input class="btn btn-success form-group" type="submit" value="Atualizar">
-                            <input class="btn btn-danger form-group" type="" value="Cancelar">
+                            <input class="btn btn-danger form-group" type="button" value="Cancelar" onclick="location.href='/setores'">
                     </div>
                 </div>
             </form>
