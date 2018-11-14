@@ -28,11 +28,13 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-sm-">
-                        <label for="responsavelSetor" class="font-weight-bold">Responsável</label>
-                        <select class="form-control" name="responsavelSetor" id="responsavelSetor" required>
+                    <div class="input-group mb-3 col-sm-12">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="responsavelSetor">Responsável</label>
+                        </div>
+                        <select class="custom-select" id="responsavelSetor" name="responsavelSetor">
                             @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->nome}}</option>
+                                <option value="{{$user->id}}">{{$user->nome}}</option>
                             @endforeach
                         </select>
                     </div>
