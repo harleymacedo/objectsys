@@ -7,6 +7,7 @@ use App\setor;
 use App\User;
 use App\user_setor;
 use DB;
+use Auth;
 
 class setorController extends Controller
 {
@@ -29,52 +30,65 @@ class setorController extends Controller
 
     public function indexSetor (setor $setor)
     {
-        $setors = DB::table('users')
+        if (Auth::user()->papel == 'admin') {
+            $setors = DB::table('users')
             ->join('setors', 'users.id', '=', 'setors.responsavelSetor')
             ->select('users.nome', 'setors.nomeSetor','setors.descricoSetor','setors.id')->orderBy('nomeSetor')
             ->get();
 
         return view('setores.listSetor', compact('setors'));
+        }else{
+            return redirect('/home');
+        }
     }
 
     public function novoSetor(Request $request){
 
         $data_form = $request->only(['nomeSetor','descricoSetor','responsavelSetor']);
-
-        $insert = $this->setor->insert($data_form);
-        if ($insert) {
-            return redirect('/setores');
-        }
-        else {
-            return redirect()->back();
+        if (Auth::user()->papel == 'admin') {
+            $insert = $this->setor->insert($data_form);
+            if ($insert) {
+                return redirect('/setores');
+            }
+            else {
+                return redirect()->back();
+            }
+        }else{
+            return redirect('/home');
         }
     }
 
     public function editar(Request $request){
 
         $data_form = $request->only(['idSetor','nomeSetor','descricoSetor','responsavelSetor']);
+        if (Auth::user()->papel == 'admin') {
+            $update = DB::table('setors')
+                ->where('id', $data_form['idSetor'])
+                ->update(['nomeSetor' => $data_form['nomeSetor'],'descricoSetor' => $data_form['descricoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
 
-       $update = DB::table('setors')
-            ->where('id', $data_form['idSetor'])
-            ->update(['nomeSetor' => $data_form['nomeSetor'],'descricoSetor' => $data_form['descricoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
-
-        if ($update) {
-            return redirect('/setores');
-        }
-        else {
-            return redirect()->back();
+            if ($update) {
+                return redirect('/setores');
+            }
+            else {
+                return redirect()->back();
+            }
+        }else{
+            return redirect('/home');
         }
     }
 
     public function excluirSetor($id){
+        if (Auth::user()->papel == 'admin') {
+            $delete = DB::table('setors')->where('id', '=', $id)->delete();
 
-        $delete = DB::table('setors')->where('id', '=', $id)->delete();
-
-        if ($delete) {
-            return redirect('/setores');
-        }
-        else {
-            return redirect()->back();
+            if ($delete) {
+                return redirect('/setores');
+            }
+            else {
+                return redirect()->back();
+            }
+        }else{
+            return redirect('/home');
         }
     }
 

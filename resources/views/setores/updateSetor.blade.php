@@ -16,7 +16,7 @@
             <form method="POST" action="/atualizar/setor">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
-                    <div class="form-group col-sm-10">
+                    <div class="form-group col-sm-12">
                         <label for="nomeSetor" class="font-weight-bold">Nome</label>
                     <input name="nomeSetor" type="text" class="form-control" id="nomeSetor" placeholder="Nome do Setor" value="{{$setor->nomeSetor}}" required>
                     </div>
@@ -33,11 +33,13 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-sm-">
-                        <label for="responsavelSetor" class="font-weight-bold">Responsável</label>
-                        <select class="form-control" name="responsavelSetor" id="responsavelSetor" required>
+                    <div class="input-group mb-3 col-sm-12">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="responsavelSetor">Responsável</label>
+                        </div>
+                        <select class="custom-select" id="responsavelSetor" name="responsavelSetor">
                             @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->nome}}</option>
+                                <option value="{{$user->id}}">{{$user->nome}}</option>
                             @endforeach
                         </select>
                     </div>
