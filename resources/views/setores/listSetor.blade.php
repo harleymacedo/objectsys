@@ -30,7 +30,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Nome 2</th>
+                        <th scope="col">Nome</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Responsável</th>
                         <th scope="col">Ações</th>
