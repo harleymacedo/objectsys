@@ -23,5 +23,11 @@ class tabelaUsuarios extends Seeder
             'papel' => 'user',
             'password' => bcrypt('senhateste')
         ]);
+        DB::table('users')->insert([
+            'nome' => 'Victor Hugo',
+            'email' => 'hugo.victor.n@gmail.com',
+            'papel' => 'admin',
+            'password' => bcrypt('senhateste')
+        ]);
     }
 }
