@@ -19,10 +19,11 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/listarobj', 'objetoController@listarObj');
-    Route::post('/cadastrarobj', 'objetoController@novoObj');
-    Route::post('/editarobj', 'objetoController@editarObj');
-    Route::post('/excluirobj', 'objetoController@excluirObj');
+    Route::get('/listarobj', 'objetosController@listarObj');
+    Route::post('/cadastrarobj', 'objetosController@novoObj');
+    Route::get('/cadobj', 'objetosController@cadObj');
+    Route::post('/editarobj', 'objetosController@editarObj');
+    Route::post('/excluirobj', 'objetosController@excluirObj');
 
     Route::get('/cadastrar/setor', 'setorController@cadSetor')->name('cadastrarsetor');
     Route::post('/salvar/setor', 'setorController@novoSetor');

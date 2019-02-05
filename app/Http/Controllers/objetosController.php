@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\objeto;
 use Illuminate\Http\Request;
+Use DB;
+Use Auth;
+use App\setor;
 
 class objetosController extends Controller
 {
@@ -19,58 +22,90 @@ class objetosController extends Controller
      * @param objeto $objeto
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function listarObj (objeto $objeto)
+    public function indexObj (objeto $objeto)
     {
-        $objetos = $objeto->all();
+            $objetos = DB::table('setors')
+            ->join('objetos', 'setors.id', '=', 'objetos.setorObj')
+            ->select('setors.nome', 'objetos.nomeObj','objetos.descricaoObj','objetos.id')->orderBy('nomeObj')
+            ->get();
 
-        return view('objetos', compact('objetos'));
+        return view('objetos.listObj', compact('objetos'));
+        
     }
 
     public function novoObj(Request $request){
 
-        $data_form = $request->only(['nomeObj','descricaoObj','situacaoObj','categoriaObj']);
+        $data_form = $request->only(['nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj']);
 
-
-        $insert = $this->objeto->insert($data_form);
-        if ($insert) {
+        if(Auth::user()->papel == 'admin'){
+            $insert = $this->objeto->insert($data_form);
+            if ($insert) {
+                return redirect('/home');
+            }
+            else {
+                return redirect()->back();
+            }    
+        }else{
             return redirect('/home');
         }
-        else {
-            return redirect()->back();
-        }
+        
     }
 
     public function editarObj(Request $request){
 
-        $data_form = $request->only(['nomeObj','descricaoObj','situacaoObj','categoriaObj']);
+        $data_form = $request->only(['idObj','nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj']);
+        if(Auth::user()->papel == 'admin'){
+            $objeto = $this->objeto->find($data_form['idObj']);
 
-        $objeto = $this->objeto->find($data_form['objeto_id']);
-
-        $update = $objeto->update([
-            'nomeObj' => $data_form['nomeObj'],
-            'descricaoObj' => $data_form['descricaoObj'],
-            'situacaoObj' => $data_form['situacaoObj'],
-            'categoriaObj' => $data_form['categoriaObj'],
-        ]);
-        if ($update) {
+            $update = $objeto->update([
+                'nomeObj' => $data_form['nomeObj'],
+                'descricaoObj' => $data_form['descricaoObj'],
+                'situacaoObj' => $data_form['situacaoObj'],
+                'categoriaObj' => $data_form['categoriaObj'],
+                'setorObj' => $data_form['setorObj']
+            ]);
+            if ($update) {
+                return redirect('/home');
+            }
+            else {
+                return redirect()->back();
+            }    
+        }
+        else{
             return redirect('/home');
         }
-        else {
-            return redirect()->back();
+        
+    }
+
+    public function excluirObj($id){
+        if(Auth::user()->papel == 'admin'){
+            $delete = DB::table('objetos')->where('id', '=', $id)->delete();
+
+            if($delete){
+                return redirect('/objetos');
+            }
+            else{
+                return redirect()->back();
+            }
+        }
+        else{
+            return redirect('/home');
         }
     }
 
-    public function excluirObj(Request $request){
+    public function cadObj(){
 
-        $data_form = $request->only(['objeto_id']);
+        $setors = DB::table('setors')->get();
 
-        $objeto = $this->objeto->find($data_form['objeto_id']);
-        $delete = $objeto->delete();
-        if ($delete) {
-            return redirect('/home');
-        }
-        else {
-            return redirect()->back();
-        }
+        return view('objetos.cadObj', compact('setors'));
     }
+
+    public function updateObj($id){
+        $objeto = $this->objeto->find($id);
+
+        $setor = DB::table('setors')->get();
+
+        return view('objetos.updateObjetos', compact('users','setor'));
+    }
+
 }
