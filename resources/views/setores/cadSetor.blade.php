@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-sm-12">
-        <span class="h1 mb-1 mt-1 float-left">Cadastrar de setores</span>
+        <span class="h1 mb-1 mt-1 float-left">Cadastro setores</span>
         </div>
     </div>
 
@@ -23,8 +23,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
-                        <label for="descricoSetor" class="font-weight-bold">Descrição</label>
-                        <textarea name="descricoSetor" class="form-control" maxlength="500" id="descricoSetor" placeholder="Descrição do Setor" required></textarea>
+                        <label for="descricaoSetor" class="font-weight-bold">Descrição</label>
+                        <textarea name="descricaoSetor" class="form-control" maxlength="500" id="descricaoSetor" placeholder="Descrição do Setor" required></textarea>
                     </div>
                 </div>
                 <div class="form-row">
@@ -58,5 +58,3 @@
     </script>
 @endcan
 @endsection
-
-

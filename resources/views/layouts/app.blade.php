@@ -61,11 +61,22 @@
                                     <span class="caret">Setores</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('cadastrarsetor') }}">Cadastrar Novo</a>
+                                    <a class="dropdown-item" href="{{ route('cadastrarsetor') }}">Cadastrar Setor</a>
                                     <a class="dropdown-item" href="{{ route('listarsetor') }}">Listar Setores</a>
                                 </div>
                             </li>
                         @endcan
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span class="caret">Objetos</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @can('editar')
+                                        <a class="dropdown-item" href="{{ route('cadastrarobjetos') }}">Cadastrar Objeto</a>
+                                    @endcan
+                                    <a class="dropdown-item" href="{{ route('listarobjetos') }}">Listar Objetos</a>
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->nome }} <span class="caret"></span>
