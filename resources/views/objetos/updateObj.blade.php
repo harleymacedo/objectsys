@@ -7,24 +7,29 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-sm-12">
-        <span class="h1 mb-1 mt-1 float-left">Cadastro de Objetos</span>
+        <span class="h1 mb-1 mt-1 float-left">Atualizar Objeto</span>
         </div>
     </div>
 
     <div class="row justify-content-center mb-5 card py-5">
         <div class="col-sm-12">
-            <form method="POST" action="/salvar/objeto">
+            <form method="POST" action="/atualizar/objeto">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="nomeObj" class="font-weight-bold">Nome</label>
-                        <input name="nomeObj" type="text" class="form-control" id="nomeObj" placeholder="Nome do Objeto" required>
+                    <input name="nomeObj" type="text" class="form-control" id="nomeObj" placeholder="Nome do Objeto" value="{{$objeto->nomeObj}}" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" hidden >
+                        <input name="idObj" type="number" class="form-control" value="{{$objeto->id}}" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="descricaoObj" class="font-weight-bold">Descrição</label>
-                        <textarea name="descricaoObj" class="form-control" maxlength="500" id="descricaoObj" placeholder="Descrição do Objeto" required></textarea>
+                    <textarea name="descricaoObj" class="form-control" maxlength="500" id="descricaoObj" placeholder="Descrição do Objeto" required>{{$objeto->descricaoObj}}</textarea>
                     </div>
                 </div>
                 <div class="form-row">
@@ -64,11 +69,11 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div>  
                 <div class="form-row">
                     <div class="form-group col-sm-12">
-                        <button class="btn btn-success form-group" type="submit">Cadastrar</button>
-                        <input class="btn btn-danger form-group" type="button" value="Cancelar" onclick="location.href='/objetos'">
+                            <input class="btn btn-success form-group" type="submit" value="Atualizar">
+                            <input class="btn btn-danger form-group" type="button" value="Cancelar" onclick="location.href='/objetos'">
                     </div>
                 </div>
             </form>
@@ -78,9 +83,8 @@
       </div>
 
 @else
-
-    <script>
-        window.location = "/home";
-    </script>
+    <script>window.location = "/home";</script>
 @endcan
 @endsection
+
+

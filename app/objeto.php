@@ -10,7 +10,7 @@ class objeto extends Model
     use Notifiable;
 
     protected $fillable = [
-        'nomeObj','descricaoObj','situacaoObj','categoriaObj'
+        'nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj'
     ];
 
 }

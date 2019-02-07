@@ -26,7 +26,7 @@ class objetosController extends Controller
     {
             $objetos = DB::table('setors')
             ->join('objetos', 'setors.id', '=', 'objetos.setorObj')
-            ->select('setors.nome', 'objetos.nomeObj','objetos.descricaoObj','objetos.id')->orderBy('nomeObj')
+            ->select('setors.nomeSetor', 'objetos.nomeObj','objetos.descricaoObj','objetos.id','objetos.situacaoObj','objetos.categoriaObj')->orderBy('nomeObj')
             ->get();
 
         return view('objetos.listObj', compact('objetos'));
@@ -40,7 +40,7 @@ class objetosController extends Controller
         if(Auth::user()->papel == 'admin'){
             $insert = $this->objeto->insert($data_form);
             if ($insert) {
-                return redirect('/home');
+                return redirect('/objetos');
             }
             else {
                 return redirect()->back();
@@ -65,7 +65,7 @@ class objetosController extends Controller
                 'setorObj' => $data_form['setorObj']
             ]);
             if ($update) {
-                return redirect('/home');
+                return redirect('/objetos');
             }
             else {
                 return redirect()->back();
@@ -103,9 +103,9 @@ class objetosController extends Controller
     public function updateObj($id){
         $objeto = $this->objeto->find($id);
 
-        $setor = DB::table('setors')->get();
+        $setors = DB::table('setors')->get();
 
-        return view('objetos.updateObjetos', compact('users','setor'));
+        return view('objetos.updateObj', compact('objeto','setors'));
     }
 
 }

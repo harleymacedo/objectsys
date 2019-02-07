@@ -4,7 +4,8 @@
     <head>
         <meta charset="UTF-8"/>
         <title>ObjectSys</title>
-        <link rel='shortcut icon' type='image/x-icon' src="{{ asset('favicon.ico') }}"/>
+        
+
         @yield('imports')
 
     </head>
