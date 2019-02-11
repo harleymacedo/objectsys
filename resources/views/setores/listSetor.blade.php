@@ -40,7 +40,7 @@
                     <tbody>
                         <tr>
                             <th scope="row">{{$setor->nomeSetor}}</th>
-                            <td>{{$setor->descricoSetor}}</td>
+                            <td>{{$setor->descricaoSetor}}</td>
 
                             <td>{{$setor->nome}}</td>
 

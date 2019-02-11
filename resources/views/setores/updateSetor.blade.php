@@ -28,8 +28,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-12">
-                        <label for="descricoSetor" class="font-weight-bold">Descrição</label>
-                    <textarea name="descricoSetor" class="form-control" maxlength="500" id="descricoSetor" placeholder="Descrição do Setor" required>{{$setor->descricoSetor}}</textarea>
+                        <label for="descricaoSetor" class="font-weight-bold">Descrição</label>
+                    <textarea name="descricaoSetor" class="form-control" maxlength="500" id="descricaoSetor" placeholder="Descrição do Setor" required>{{$setor->descricaoSetor}}</textarea>
                     </div>
                 </div>
                 <div class="form-row">

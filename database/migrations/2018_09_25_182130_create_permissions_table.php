@@ -13,23 +13,29 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nome');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('permissions'))
+        {
+            Schema::create('permissions', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('nome');
+                $table->timestamps();
+            });   
+        }
+        
+        if (!Schema::hasTable('permission_role'))
+        {
+            Schema::create('permission_role', function (Blueprint $table){
+                $table->increments('id');
 
-        Schema::create('permission_role', function (Blueprint $table){
-            $table->increments('id');
+                $table->integer('permission_id')->unsigned();
+                $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');
 
-            $table->integer('permission_id')->unsigned();
-            $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');
+                $table->integer('role_id')->unsigned();
+                $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
 
-            $table->integer('role_id')->unsigned();
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-
-            $table->timestamps();
-        });
+                $table->timestamps();
+            });   
+        }   
     }
 
     /**

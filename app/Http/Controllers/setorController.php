@@ -33,7 +33,7 @@ class setorController extends Controller
         if (Auth::user()->papel == 'admin') {
             $setors = DB::table('users')
             ->join('setors', 'users.id', '=', 'setors.responsavelSetor')
-            ->select('users.nome', 'setors.nomeSetor','setors.descricoSetor','setors.id')->orderBy('nomeSetor')
+            ->select('users.nome', 'setors.nomeSetor','setors.descricaoSetor','setors.id')->orderBy('nomeSetor')
             ->get();
 
         return view('setores.listSetor', compact('setors'));
@@ -44,7 +44,7 @@ class setorController extends Controller
 
     public function novoSetor(Request $request){
 
-        $data_form = $request->only(['nomeSetor','descricoSetor','responsavelSetor']);
+        $data_form = $request->only(['nomeSetor','descricaoSetor','responsavelSetor']);
         if (Auth::user()->papel == 'admin') {
             $insert = $this->setor->insert($data_form);
             if ($insert) {
@@ -60,11 +60,11 @@ class setorController extends Controller
 
     public function editar(Request $request){
 
-        $data_form = $request->only(['idSetor','nomeSetor','descricoSetor','responsavelSetor']);
+        $data_form = $request->only(['idSetor','nomeSetor','descricaoSetor','responsavelSetor']);
         if (Auth::user()->papel == 'admin') {
             $update = DB::table('setors')
                 ->where('id', $data_form['idSetor'])
-                ->update(['nomeSetor' => $data_form['nomeSetor'],'descricoSetor' => $data_form['descricoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
+                ->update(['nomeSetor' => $data_form['nomeSetor'],'descricaoSetor' => $data_form['descricaoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
 
             if ($update) {
                 return redirect('/setores');

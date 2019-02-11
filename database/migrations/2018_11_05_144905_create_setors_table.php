@@ -13,6 +13,8 @@ class CreateSetorsTable extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('setors'))
+        {
             Schema::create('setors', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('nomeSetor');
@@ -20,8 +22,8 @@ class CreateSetorsTable extends Migration
                 $table->integer('responsavelSetor')->unsigned();
                 $table->foreign('responsavelSetor')->references('id')->on('users')->onDelete('cascade');
                 $table->timestamps();
-            });
-
+            });    
+        }
     }
 
     /**

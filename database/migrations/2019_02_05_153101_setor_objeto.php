@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserSetorsTable extends Migration
+class SetorObjeto extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUserSetorsTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('user_setors'))
+        if (!Schema::hasTable('setor_objeto'))
         {
-            Schema::create('user_setors', function (Blueprint $table) {
+            Schema::create('setor_objeto', function (Blueprint $table) {
                 $table->increments('id');
 
-                $table->integer('user_id')->unsigned();
-                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                $table->integer('objeto_id')->unsigned();
+                $table->foreign('objeto_id')->references('id')->on('objetos')->onDelete('cascade');
 
                 $table->integer('setor_id')->unsigned();
                 $table->foreign('setor_id')->references('id')->on('setors')->onDelete('cascade');
@@ -34,6 +34,6 @@ class CreateUserSetorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_setors');
+        //
     }
 }
