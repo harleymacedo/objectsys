@@ -108,4 +108,17 @@ class objetosController extends Controller
         return view('objetos.updateObj', compact('objeto','setors'));
     }
 
+    public function buscarObj(Request $request){  //add $ordem para ordenar de acordo com escolha do usuário???
+
+        $busca = $request->only(['busca','filtro']);
+        
+        $objetos = DB::table('objetos')->where('nomeObj', '=', $busca['busca'])->orWhere('situacaoObj', '=', $busca['busca'])
+        ->orWhere('categoriaObj', '=', $busca['busca'])
+        ->orWhere('setorObj','=',$busca['busca'])
+        ->get();
+    
+        return view('objetos.listObj', compact('objetos'));
+        
+    }
+
 }

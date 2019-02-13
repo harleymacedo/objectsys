@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 });
 
+
 Route::middleware(['auth'])->group(function () {
 
     // Rotas para o controle de objetos
@@ -25,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::any('/update/objeto/{id}','objetosController@updateObj');
     Route::post('/atualizar/objeto', 'objetosController@editarObj');
     Route::any('/delete/objeto/{id}', 'objetosController@excluirObj')->name('excluirobjetos');
+    
 
     // Rotas para o controler de setor
     Route::get('/cadastrar/setor', 'setorController@cadSetor')->name('cadastrarsetor');
@@ -41,4 +43,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/objetos', 'objetosController@indexObj')->name('listarobjetos'); //Rota para listar objetos pode ser acessada por todos
+Route::post('/buscar', 'objetosController@buscarObj');
