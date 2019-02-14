@@ -66,7 +66,7 @@
                             <td>{{$objeto->descricaoObj}}</td>
                             <td>{{$objeto->situacaoObj}}</td>
                             <td>{{$objeto->categoriaObj}}</td>
-                            <td></td>
+                            <td>{{$objeto->nomeSetor}}</td>
                             @can('editar')
                             <td>
                                 <a href="/update/objeto/{{$objeto->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>

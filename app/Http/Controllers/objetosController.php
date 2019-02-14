@@ -113,8 +113,10 @@ class objetosController extends Controller
         $busca = $request->only(['busca','filtro']);
         $query = '%' . $busca['busca'] . '%';
 
-        $objetos = DB::table('objetos')->where('nomeObj', 'like', $query)->orWhere('situacaoObj', 'like', $query)
-        ->orWhere('categoriaObj', 'like', $query)
+        $objetos = DB::table('setors')
+            ->join('objetos', 'setors.id', '=', 'objetos.setorObj')
+            ->select('setors.nomeSetor', 'objetos.nomeObj','objetos.descricaoObj','objetos.id','objetos.situacaoObj','objetos.categoriaObj')->where('nomeObj', 'like', $query)->orWhere('situacaoObj', 'like', $query)
+        ->orWhere('categoriaObj', 'like', $query)->orderBy('nomeObj')
         ->get();
     
         return view('objetos.listObj', compact('objetos'));
