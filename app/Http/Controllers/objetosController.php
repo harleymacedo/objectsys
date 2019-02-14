@@ -111,9 +111,10 @@ class objetosController extends Controller
     public function buscarObj(Request $request){  //add $ordem para ordenar de acordo com escolha do usuário???
 
         $busca = $request->only(['busca','filtro']);
-        
-        $objetos = DB::table('objetos')->where('nomeObj', '=', $busca['busca'])->orWhere('situacaoObj', '=', $busca['busca'])
-        ->orWhere('categoriaObj', '=', $busca['busca'])
+        $query = '%' . $busca['busca'] . '%';
+
+        $objetos = DB::table('objetos')->where('nomeObj', 'like', $query)->orWhere('situacaoObj', 'like', $query)
+        ->orWhere('categoriaObj', 'like', $query)
         ->get();
     
         return view('objetos.listObj', compact('objetos'));
