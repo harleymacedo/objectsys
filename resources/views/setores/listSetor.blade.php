@@ -14,27 +14,26 @@
     @endcan
     <div class="row justify-content-center mb-1 mt-1">
         <div class="col-sm-12">
-            <form>
+            <form action="/buscar/setor" method="POST">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="input-group form-group col-sm-8">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for=""><i class="fas fa-search-location"></i></label>
+                            <label class="input-group-text" for="busca"><i class="fas fa-search"></i></label>
                         </div>
-                        <input class="form-control" type="search" placeholder="Buscar...">
+                        <input class="form-control" type="text" name="busca" id="busca" placeholder="Buscar..." required>
                     </div>
                     <div class="input-group form-group col-sm-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="filtro"><i class="fas fa-filter"></i></label>
+                            <label class="input-group-text" for="filtro"><i class="fas fa-sort"></i></label>
                         </div>
                         <select class="custom-select" id="filtro" name="filtro">
-                            <option value="">Filtros</option>
-                            <option value="">Filtros 2</option>
-                            <option value="">Filtros 3</option>
-                            <option value="">Filtros 4</option>
+                            <option value="nomeSetor">Nome</option>
+                            <option value="responsavelSetor">Responsável</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-1">
-                        <button class="btn btn-dark float-right" type="submit">Buscar</>
+                        <button class="btn btn-dark float-right" type="submit">Buscar</button>
                     </div>
                 </div>
             </form>

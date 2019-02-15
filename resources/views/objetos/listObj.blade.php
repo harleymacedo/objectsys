@@ -13,7 +13,7 @@
     @endcan
     <div class="row justify-content-center mb-1 mt-1">
         <div class="col-sm-12">
-            <form action="/buscar" method="POST">
+            <form action="/buscar/objeto" method="POST">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="input-group form-group col-sm-8">
@@ -24,13 +24,13 @@
                     </div>
                     <div class="input-group form-group col-sm-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="filtro"><i class="fas fa-filter"></i></label>
+                            <label class="input-group-text" for="filtro"><i class="fas fa-sort"></i></label>
                         </div>
                         <select class="custom-select" id="filtro" name="filtro">
-                            <option value="">Filtros</option>
-                            <option value="">Filtros 2</option>
-                            <option value="">Filtros 3</option>
-                            <option value="">Filtros 4</option>
+                            <option value="nomeObj">Nome</option>
+                            <option value="situacaoObj">Situação</option>
+                            <option value="categoriaObj">Categoria</option>
+                            <option value="nomeSetor">Setor</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-1">

@@ -108,4 +108,21 @@ class setorController extends Controller
         return view('setores.updateSetor', compact('users','setor'));
 
     }
+
+    public function buscarSetor(Request $request){
+
+        $busca = $request->only(['busca','filtro']);
+        $query = '%' . $busca['busca'] . '%';
+
+        $setors = DB::table('users')
+            ->join('setors', 'users.id', '=', 'responsavelSetor')
+            ->select('users.nome', 'setors.nomeSetor','setors.descricaoSetor','setors.id')
+            ->where('nomeSetor', 'like', $query)
+            ->orWhere('users.nome', 'like', $query)
+            ->orderBy($busca['filtro'])
+            ->get();
+    
+        return view('setores.listSetor', compact('setors'));
+        
+    }
 }

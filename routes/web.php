@@ -45,4 +45,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/objetos', 'objetosController@indexObj')->name('listarobjetos'); //Rota para listar objetos pode ser acessada por todos
-Route::post('/buscar', 'objetosController@buscarObj');
+Route::post('/buscar/objeto', 'objetosController@buscarObj');
+Route::post('/buscar/setor', 'setorController@buscarSetor');
