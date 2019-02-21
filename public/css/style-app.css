@@ -1,14 +1,26 @@
 .logo{
-    width: 100%;
+    margin-top: -40px;
+    z-index: 50;
+    margin-left: 80px;
+    position: absolute;
 }
 .color-navbar{
-    background-color: hsl(200, 13%, 95%);
-    box-shadow: 0px 3px rgb(180, 129, 18);
-    margin-bottom: 50px;
+    background-color: hsl(0, 0%, 100%);
 }
-.navbar {
+.circulo_logo{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 140px;
+    margin-left: 34px;
+    margin-top: -152px;
+    z-index: 0;
+    position: absolute;
+}
+.navbar{
     position: relative;
-    padding: 1.0rem 1rem;
+    padding: .5rem 1rem;
+    z-index:1;
 }
 
 .foot{

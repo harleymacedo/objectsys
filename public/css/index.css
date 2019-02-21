@@ -24,6 +24,14 @@
     margin-bottom: 20px;
 }
 .bg-color{
-    background-color: #ffffff;
+    z-index: 0;
 
+
+}
+.carousel-inner {
+}
+.carousel {
+    position: relative;
+    z-index: 0;
+    width: 100%;
 }
