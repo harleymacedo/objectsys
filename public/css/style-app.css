@@ -7,16 +7,7 @@
 .color-navbar{
     background-color: hsl(0, 0%, 100%);
 }
-.circulo_logo{
-    width: 400px;
-    height: 200px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 140px;
-    margin-left: 34px;
-    margin-top: -152px;
-    z-index: 0;
-    position: absolute;
-}
+
 .navbar{
     position: relative;
     padding: .5rem 1rem;

@@ -99,7 +99,7 @@
     <a class="logo_navbar" href="{{ url('/') }}">
         <img class="logo" src="{{ asset('images/logonavbar.png') }}" alt="logo">
     </a>
-    <div class="circulo_logo"></div>
+
     <main>
         @yield('content')
     </main>
