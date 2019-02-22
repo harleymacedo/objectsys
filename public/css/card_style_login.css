@@ -5,14 +5,14 @@
 .card{
     border-radius: 10px;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 20%;
     margin-right: 10%;
     margin-bottom: 5%;
-    box-shadow: 2px 2px 2px 2px rgb(180, 129, 18);
+    box-shadow: 2px 2px 2px 2px rgb(32, 44, 94);
 
 }
 
 body{
-    background-color: rgba(255, 192, 57, 0.692);
+    background-color: rgb(46, 95, 168);
 
 }
