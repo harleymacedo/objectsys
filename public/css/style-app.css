@@ -29,7 +29,9 @@
 .body_space{
     margin-top: 5%;
 }
-
+body{
+    background-color: rgb(46, 95, 168) !important;
+}
 
 @media (max-width: 770px) {
     .botão{
