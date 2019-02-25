@@ -31,6 +31,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col justify-content-start">
+                            <a class="logo_navbar" href="{{ url('/') }}">
+                                <img class="logo" src="{{ asset('images/logonavbar.png') }}" alt="logo">
+                            </a>
                     </div>
                     <div class="botão col d-flex justify-content-end">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -96,9 +99,7 @@
 
         </nav>
     </div>
-    <a class="logo_navbar" href="{{ url('/') }}">
-        <img class="logo" src="{{ asset('images/logonavbar.png') }}" alt="logo">
-    </a>
+    
 
     <main>
         @yield('content')
