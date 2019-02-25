@@ -31,9 +31,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col justify-content-start">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img class="logo" src="{{ asset('images/logo_small.png') }}" alt="logo">
-                        </a>
                     </div>
                     <div class="botão col d-flex justify-content-end">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -96,81 +93,16 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
     </div>
+    <a class="logo_navbar" href="{{ url('/') }}">
+        <img class="logo" src="{{ asset('images/logonavbar.png') }}" alt="logo">
+    </a>
+
     <main>
         @yield('content')
     </main>
-    <!-- Footer -->
-    <footer class="foot page-footer font-small blue pt-4">
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-        <!-- Grid row -->
-            <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <!-- Content -->
-                    <h5 class="text-uppercase" style="color: #e65437">Sobre:</h5>
-                    <p>Um sistema de reserva de materiais em conjunto com o rastreamento em tempo real dos objetos que podem ser deslocados, auxiliando os usuários (professores) na reserva e gerenciamento de recursos, evitando ainda a perda dos mesmos. </p>
-                </div>
-                <!-- Grid column -->
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase" style="color: #e65437">Equipe:</h5>
-                    <ul class="list-unstyled texto">
-                        <li>
-                            <p >Harley Macêdo</p>
-                        </li>
-                        <li>
-                            <p >Igor William</p>
-                        </li>
-                        <li>
-                            <p >João Batista</p>
-                        </li>
-                        <li>
-                            <p >Lucas Eduardo</p>
-                        </li>
-                        <li>
-                            <p >Victor Hugo</p>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase" style="color: #e65437">Contatos</h5>
-                    <ul class="list-unstyled texto">
-                        <li>
-                            <p>Harley.ip@gmail.com</p>
-                        </li>
-                        <li>
-                            <p>igorwm9@gmail.com</p>
-                        </li>
-                        <li>
-                            <p>juniorbj1993@gmail.com</p>
-                        </li>
-                        <li>
-                            <p>lucasseduhh@gmail.com</p>
-                        </li>
-                        <li>
-                            <p>hugo.victor.n@gmail.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-        <!-- Footer Links -->
-        <!-- Copyright -->
-        <div class="footer_copyright footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://sites.google.com/site/laisifce/home">LaIS</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
+
 </body>
 </html>
