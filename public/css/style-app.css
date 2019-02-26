@@ -36,6 +36,11 @@ body{
     margin-top: 3% !important;
     color: white;
 }
+.btn_color{
+    background-color: rgb(27, 27, 73) !important;
+    color: white !important;
+    border-color: rgb(27, 27, 73) !important;
+}
 
 @media (max-width: 770px) {
     .botão{

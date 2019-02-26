@@ -7,7 +7,7 @@
     <div class="row mt-4">
         <div class="col-sm-12">
             <span class="titulo h1 mb-1 mt-1 float-left">Objetos</span>
-            <a href="/cadastrar/objeto" class="btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Objeto</a>
+            <a href="/cadastrar/objeto" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Objeto</a>
         </div>
     </div>
     @endcan
