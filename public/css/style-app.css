@@ -32,6 +32,10 @@
 body{
     background-color: rgb(46, 95, 168) !important;
 }
+.titulo{
+    margin-top: 2%;
+    color: white;
+}
 
 @media (max-width: 770px) {
     .botão{

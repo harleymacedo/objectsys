@@ -7,7 +7,7 @@
     @can('editar')
     <div class="row mt-4">
         <div class="col-sm-12">
-            <span class="h1 mb-1 mt-1 float-left">Setores</span>
+            <span class="titulo h1 mb-1 mt-1 float-left">Setores</span>
             <a href="/cadastrar/setor" class="btn btn-outline-secondary mb-1 mt-1 float-right">Cadastrar Setor</a>
         </div>
     </div>
