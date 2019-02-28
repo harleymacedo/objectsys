@@ -51,10 +51,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Entrar</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Registrar</a>
-                            </li>
                         @else
+                        @can('editar')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('cadastrarUser') }}">Registrar</a>
+                            </li>
+                        @endcan
                         @can('editar')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
