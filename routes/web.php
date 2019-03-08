@@ -40,6 +40,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/atualizar/setor', 'setorController@editar');
     Route::any('/delete/setor/{id}', 'setorController@excluirSetor')->name('excluirsetor');
 
+    Route::get('/objetos', 'objetosController@indexObj')->name('listarobjetos'); //Rota para listar objetos pode ser acessada por todos
+    Route::post('/buscar/objeto', 'objetosController@buscarObj');
+    Route::post('/buscar/setor', 'setorController@buscarSetor');
+
 });
 
 Auth::routes();
@@ -48,6 +52,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/objetos', 'objetosController@indexObj')->name('listarobjetos'); //Rota para listar objetos pode ser acessada por todos
-Route::post('/buscar/objeto', 'objetosController@buscarObj');
-Route::post('/buscar/setor', 'setorController@buscarSetor');
