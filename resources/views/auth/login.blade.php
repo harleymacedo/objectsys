@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('contentpage')
 <link rel="stylesheet" type="text/css" href="{{ asset("css/card_style_login.css")}}"/>
 <div class="container_login container">
         <div class="row justify-content-center">

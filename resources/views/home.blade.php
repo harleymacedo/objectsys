@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
+@extends('layouts.sidemenu')
 
+@section('contentpage')
 <div class="body_space container">
     <div class="row justify-content-center">
         <div class="col-md-8">

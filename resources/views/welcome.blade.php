@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('content')
+@extends('layouts.sidemenu')
+
+@section('contentpage')
 <link href="{{ asset('css/index.css') }}" rel="stylesheet">
 
 <div class="bg-color flex-center position-ref full-height">

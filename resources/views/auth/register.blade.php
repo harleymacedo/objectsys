@@ -1,6 +1,7 @@
 @extends('layouts.app')
+@extends('layouts.sidemenu')
 
-@section('content')
+@section('contentpage')
 <link rel="stylesheet" type="text/css" href="{{ asset("css/card_style_login.css")}}"/>
 <div class="container">
     <div class="row justify-content-center">
@@ -63,7 +64,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('salvarUser') }}
+                                    Salvar
                                 </button>
                             </div>
                         </div>

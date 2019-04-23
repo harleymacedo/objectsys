@@ -1,6 +1,7 @@
 @extends('layouts.app')
+@extends('layouts.sidemenu')
 
-@section('content')
+@section('contentpage')
 
 @can('editar')
 
