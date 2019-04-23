@@ -23,7 +23,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Cadastrar Objetos</a>
+                            <a href="cadastrar/objeto">Cadastrar Objetos</a>
                         </li>
                         <li>
                             <a href="#">Listar Objetos</a>
