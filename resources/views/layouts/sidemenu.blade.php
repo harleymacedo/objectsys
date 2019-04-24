@@ -26,32 +26,29 @@
                             <a href="cadastrar/objeto">Cadastrar Objetos</a>
                         </li>
                         <li>
-                            <a href="#">Listar Objetos</a>
+                            <a href="{{ route('listarobjetos') }}">Listar Objetos</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('cadastrarUser') }}">
                         <i class="fas fa-briefcase"></i>
-                        About
+                        Cadastrar Usuário
                     </a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
-                        Pages
+                        Setores
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="{{ route('cadastrarsetor') }}">Cadastrar Setor</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
+                            <a href="{{ route('listarsetor') }}">Listar Setores</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <i class="fas fa-image"></i>
                         Portfolio
@@ -68,17 +65,21 @@
                         <i class="fas fa-paper-plane"></i>
                         Contact
                     </a>
-                </li>
+                </li> -->
             </ul>
 
-            <!-- <ul class="list-unstyled CTAs">
+            <ul class="list-unstyled">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                    </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-                </li>
-            </ul> -->
+                </li> -->
+            </ul>
         </nav>
 @endif
 
