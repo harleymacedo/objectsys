@@ -35,6 +35,16 @@
                         <i class="fas fa-briefcase"></i>
                         Cadastrar Usuário
                     </a>
+                </li>
+                @can('reservar')
+                <li>
+                    <a href="{{ route( 'listarReservas')}}">
+                        <i class="fas fa-calendar"></i>
+                        Minhas Reservas
+                    </a>
+                </li>
+                @endcan
+                <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
                         Setores
@@ -117,6 +127,11 @@
                             <a class="dropdown-item" href="{{ route('listarsetor') }}">Listar Setores</a>
                         </div>
                     </li>
+                @endcan
+                @can('reservar')
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="{{ route('listarReservas') }}">Minhas Reservas</a>
+                    </li> 
                 @endcan
                 <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -44,6 +44,12 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/buscar/objeto', 'objetosController@buscarObj');
     Route::post('/buscar/setor', 'setorController@buscarSetor');
 
+    // Rotas para o controle de reservas
+    Route::post('/reservar/objeto/{id}', 'reservasController@novaReserva')->name('novaReserva');
+    Route::get('/reservas', 'reservasController@indexReservas')->name('listarReservas');
+    Route::any('/delete/reserva/{id}', 'reservasController@deleteReservas')->name('deletarReservas');
+    Route::post('/atualizar/objeto/{id}', 'reservasController@editarReservas')->name('editarReservas');
+    
 });
 
 Auth::routes();

@@ -28,8 +28,9 @@ class objetosController extends Controller
             ->join('objetos', 'setors.id', '=', 'objetos.setorObj')
             ->select('setors.nomeSetor', 'objetos.nomeObj','objetos.descricaoObj','objetos.id','objetos.situacaoObj','objetos.categoriaObj')->orderBy('nomeObj')
             ->get();
+            $user = Auth::user()->nome;
 
-        return view('objetos.listObj', compact('objetos'));
+            return view('objetos.listObj', compact('objetos','user'));
         
     }
 

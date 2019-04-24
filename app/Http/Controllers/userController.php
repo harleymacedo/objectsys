@@ -58,4 +58,11 @@ class userController extends Controller
 
         return view('auth.register');
     }
+
+    public function listUser(){
+
+        $users = DB::table('users')->get();
+
+        return view('auth.users', compact('users'));
+    }
 }
