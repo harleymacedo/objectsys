@@ -18,7 +18,7 @@
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-home"></i>
+                    <i class="fas fa-boxes"></i>
                         Objetos
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <a href="{{ route('cadastrarUser') }}">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-user-plus"></i>
                         Cadastrar Usuário
                     </a>
                 </li>
@@ -46,7 +46,7 @@
                 @endcan
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-copy"></i>
+                    <i class="fas fa-store-alt"></i>
                         Setores
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
