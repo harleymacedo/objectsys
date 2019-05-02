@@ -1,19 +1,16 @@
 @extends('layouts.app')
-
 @extends('layouts.sidemenu')
-
 @section('contentpage')
-@can('editar')
+
+@can('gerenciarSistema')
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <div class="container">
-    @can('editar')
     <div class="row mt-4">
         <div class="col-sm-12">
             <span class="titulo h1 mb-1 mt-1 float-left">Setores</span>
-            <a href="/cadastrar/setor" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Setor</a>
+            <a href="{{route('cadastrarSetor')}}" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Setor</a>
         </div>
     </div>
-    @endcan
     <div class="row justify-content-center mb-1 mt-1">
         <div class="col-sm-12">
             <form action="/buscar/setor" method="POST">
@@ -98,4 +95,5 @@
 @else
 <script>window.location = "/home";</script>
 @endcan
+
 @endsection

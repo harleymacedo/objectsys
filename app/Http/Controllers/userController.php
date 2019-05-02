@@ -25,25 +25,21 @@ class userController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'papel' => 'required|string',
         ]);
 
-        if(Auth::user()->papel == 'admin'){
-
+        if(Auth::user()->papel == 'adminSistema' or 'adminObjeto'){
             $usuario = User::create([
                 'nome' => $data['name'],
-                'papel' => $data['papel'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-    
             $id = DB::table('users')->max('id');
     
             $teste = DB::table('role_user')->insert(
-                ['user_id' => $id, 'role_id' => '2']
+                ['user_id' => $id, 'role_id' => '3']
             );
             if ($usuario) {
-                return redirect('/home');
+                return redirect('/cadastrar/user');
             }
             else {
                 return redirect()->back();

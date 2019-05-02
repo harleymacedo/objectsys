@@ -4,17 +4,17 @@
 @section('contentpage')
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <div class="container">
-    @can('editar')
+    @can('gerenciarObjetos')
     <div class="row mt-4">
         <div class="col-sm-12">
             <span class="titulo h1 mb-1 mt-1 float-left">Objetos</span>
-            <a href="/cadastrar/objeto" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Objeto</a>
+            <a href="{{route('cadastrarObjetos')}}" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Cadastrar Objeto</a>
         </div>
     </div>
     @endcan
     <div class="row justify-content-center mb-1 mt-1">
         <div class="col-sm-12">
-            <form action="/buscar/objeto" method="POST">
+            <form action="{{route('buscarObjetos')}}" method="POST">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-row">
                     <div class="input-group form-group col-sm-8">
@@ -52,10 +52,10 @@
                         <th scope="col">Situação</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Setor Responsável</th>
-                        @can('editar')
+                        @can('gerenciarObjetos')
                         <th scope="col">Ações</th>
                         @endcan
-                        @can('reservar')
+                        @can('fazerReserva')
                         <th scope="col">Reservar</th>
                         @endcan
                     </tr>
@@ -68,7 +68,7 @@
                             <td>{{$objeto->situacaoObj}}</td>
                             <td>{{$objeto->categoriaObj}}</td>
                             <td>{{$objeto->nomeSetor}}</td>
-                            @can('editar')
+                            @can('gerenciarObjetos')
                             <td>
                                 <a href="/update/objeto/{{$objeto->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#m{{$objeto->id}}">
@@ -76,7 +76,7 @@
                                 </button>
                             </td>
                             @endcan
-                            @can('reservar')
+                            @can('fazerReserva')
                             <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#r{{$objeto->id}}" title='Clique para fazer sua reserva'>
                                     <i class="fas fa-calendar-plus"></i>
@@ -89,7 +89,7 @@
             </table>
         </div>
     </div>
-    @can('editar')
+    @can('gerenciarObjetos')
     @foreach ($objetos as $objeto)
         <div class="modal fade" id="m{{$objeto->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -113,7 +113,7 @@
     @endforeach
     @endcan
 
-    @can('reservar')
+    @can('fazerReserva')
         @foreach ($objetos as $objeto)
             <div class="modal fade" id="r{{$objeto->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
