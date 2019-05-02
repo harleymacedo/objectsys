@@ -2,7 +2,7 @@
 @extends('layouts.sidemenu')
 
 @section('contentpage')
-<link rel="stylesheet" type="text/css" href="{{ asset("css/card_style_login.css")}}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/card_style_login.css')}}"/>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,7 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                                <input id="papel" type="hidden" name="papel" value="user">
+                                <!-- <input id="papel" type="hidden" name="papel" value="user"> -->
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>

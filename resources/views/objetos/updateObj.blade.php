@@ -3,7 +3,7 @@
 
 @section('contentpage')
 
-@can('editar')
+@can('gerenciarObjetos')
 
 <div class="container">
     <div class="row mt-4">

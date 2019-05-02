@@ -2,7 +2,7 @@
 
 @section('content')
     
-    @can('editar')
+    @can('gerenciarUsuarios')
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <div class="container">
             <div class="row mt-4">
@@ -13,7 +13,7 @@
             </div>
             <div class="row justify-content-center mb-1 mt-1">
                 <div class="col-sm-12">
-                    <form action="/buscar/setor" method="POST">
+                    <form action="#" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-row">
                             <div class="input-group form-group col-sm-8">

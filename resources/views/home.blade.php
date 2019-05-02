@@ -15,15 +15,29 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-
-                    @can("reservar")
-                            Você está logado como Usuário do sistema!
+                    {{Auth::user()->nome}} , você está logado com as seguintes permissões:
+                    <br>
+                    @can("gerenciarSistema")
+                        gerenciarSistema
                     @endcan
-                    @can("editar")
-                            Você está logado como Admin do sistema!
-                            <a href="/cadastrarsetor">Aqui</a>
+                    
+                    @can("gerenciarObjetos")
+                        , gerenciarObjetos
                     @endcan
+                    
+                    @can("fazerReserva")
+                        
+                        , fazerReservas
+                    @endcan
+                    
+                    @can('gerenciarUsuarios')
+                        , gerenciarUsuarios
+                    @endcan
+                    
+                    @can('fazerReservaOutro')
+                    , fazerReservaOutro
+                    @endcan
+
 
                 </div>
             </div>

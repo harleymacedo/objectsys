@@ -3,8 +3,7 @@
 
 @section('contentpage')
 
-@can('editar')
-
+@can('gerenciarObjetos')
 <div class="container">
     <div class="row mt-4">
         <div class="col-sm-12">
@@ -79,7 +78,6 @@
       </div>
 
 @else
-
     <script>
         window.location = "/home";
     </script>

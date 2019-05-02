@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset("css/card_style_login.css")}}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/card_style_login.css')}}"/>
 <div class="container_login container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -37,16 +37,11 @@
                                             <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <div style="display: none">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" checked {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                                Salvar Credenciais
+                                            Salvar Credenciais
                                         </label>
                                     </div>
                                 </div>

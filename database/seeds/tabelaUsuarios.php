@@ -14,19 +14,19 @@ class tabelaUsuarios extends Seeder
         DB::table('users')->insert([
             'nome' => 'admin',
             'email' => 'admin@email.com',
-            'papel' => 'admin',
+            'papel' => 'adminSistema',
             'password' => bcrypt('senhateste')
         ]);
         DB::table('users')->insert([
-            'nome' => 'usuario',
+            'nome' => 'servidor',
             'email' => 'usuario@email.com',
-            'papel' => 'user',
+            'papel' => 'servidor',
             'password' => bcrypt('senhateste')
         ]);
         DB::table('users')->insert([
             'nome' => 'Victor Hugo',
             'email' => 'hugo.victor.n@gmail.com',
-            'papel' => 'admin',
+            'papel' => 'adminObjeto',
             'password' => bcrypt('senhateste')
         ]);
     }

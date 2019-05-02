@@ -23,20 +23,22 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="cadastrar/objeto">Cadastrar Objetos</a>
+                            <a href="{{ route('cadastrarObjetos') }}">Cadastrar Objetos</a>
                         </li>
                         <li>
-                            <a href="{{ route('listarobjetos') }}">Listar Objetos</a>
+                            <a href="{{ route('listarObjetos') }}">Listar Objetos</a>
                         </li>
                     </ul>
                 </li>
+                @can('gerenciarUsuarios')
                 <li>
                     <a href="{{ route('cadastrarUser') }}">
                         <i class="fas fa-user-plus"></i>
                         Cadastrar Usuário
                     </a>
                 </li>
-                @can('reservar')
+                @endcan
+                @can('fazerReserva')
                 <li>
                     <a href="{{ route( 'listarReservas')}}">
                         <i class="fas fa-calendar"></i>
@@ -44,6 +46,7 @@
                     </a>
                 </li>
                 @endcan
+                @can('gerenciarSistema')
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fas fa-store-alt"></i>
@@ -51,13 +54,14 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ route('cadastrarsetor') }}">Cadastrar Setor</a>
+                            <a href="{{ route('cadastrarSetor') }}">Cadastrar Setor</a>
                         </li>
                         <li>
-                            <a href="{{ route('listarsetor') }}">Listar Setores</a>
+                            <a href="{{ route('listarSetor') }}">Listar Setores</a>
                         </li>
                     </ul>
                 </li>
+                @endcan
                 <!-- <li>
                     <a href="#">
                         <i class="fas fa-image"></i>
@@ -112,23 +116,23 @@
                         <a class="nav-link" href="{{ route('login') }}">Entrar</a>
                     </li>
                 @else
-                @can('editar')
+                @can('gerenciarUsuarios')
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cadastrarUser') }}">Registrar</a>
                     </li>
                 @endcan
-                @can('editar')
+                @can('gerenciarSistema')
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <span class="caret">Setores</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('cadastrarsetor') }}">Cadastrar Setor</a>
-                            <a class="dropdown-item" href="{{ route('listarsetor') }}">Listar Setores</a>
+                            <a class="dropdown-item" href="{{ route('cadastrarSetor') }}">Cadastrar Setor</a>
+                            <a class="dropdown-item" href="{{ route('listarSetor') }}">Listar Setores</a>
                         </div>
                     </li>
                 @endcan
-                @can('reservar')
+                @can('fazerReserva')
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="{{ route('listarReservas') }}">Minhas Reservas</a>
                     </li> 
@@ -138,10 +142,10 @@
                             <span class="caret">Objetos</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            @can('editar')
-                                <a class="dropdown-item" href="{{ route('cadastrarobjetos') }}">Cadastrar Objeto</a>
+                            @can('gerenciarObjetos')
+                                <a class="dropdown-item" href="{{ route('cadastrarObjetos') }}">Cadastrar Objeto</a>
                             @endcan
-                            <a class="dropdown-item" href="{{ route('listarobjetos') }}">Listar Objetos</a>
+                            <a class="dropdown-item" href="{{ route('listarObjetos') }}">Listar Objetos</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

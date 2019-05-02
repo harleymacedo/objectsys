@@ -12,13 +12,26 @@ class permissions extends Seeder
     public function run()
     {
         DB::table('permissions')->insert([
-            'nome' => 'editar',
+            'nome' => 'gerenciarSistema',
             'id' => '1'
         ]);
 
         DB::table('permissions')->insert([
-            'nome' => 'reservar',
+            'nome' => 'fazerReserva',
             'id' => '2'
+        ]);
+        DB::table('permissions')->insert([
+            'nome' => 'fazerReservaOutro',
+            'id' => '3'
+        ]);
+
+        DB::table('permissions')->insert([
+            'nome' => 'gerenciarObjetos',
+            'id' => '4'
+        ]);
+        DB::table('permissions')->insert([
+            'nome' => 'gerenciarUsuarios',
+            'id' => '5'
         ]);
     }
 }
