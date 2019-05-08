@@ -1,0 +1,23 @@
+.img_logo_welcome{
+    width: 50%;
+    margin-left: 25%;
+    padding: 5%;
+    margin-top: 5%;
+}
+.welcome{
+    padding: 2%;
+    
+}
+.entrar_button {
+    margin-left: 40%;
+    width: 20%;
+}
+body{
+    background-color: #2e5fa8;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1c4669;
+    border-color: #1c4669;
+    border-radius: 20px;
+}
