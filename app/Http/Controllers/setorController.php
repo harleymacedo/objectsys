@@ -30,7 +30,7 @@ class setorController extends Controller
 
     public function indexSetor (setor $setor)
     {
-        if (Auth::user()->papel == 'admin') {
+        if (Auth::user()->papel == 'adminSistema') {
             $setors = DB::table('users')
             ->join('setors', 'users.id', '=', 'setors.responsavelSetor')
             ->select('users.nome', 'setors.nomeSetor','setors.descricaoSetor','setors.id')->orderBy('nomeSetor')
@@ -45,7 +45,7 @@ class setorController extends Controller
     public function novoSetor(Request $request){
 
         $data_form = $request->only(['nomeSetor','descricaoSetor','responsavelSetor']);
-        if (Auth::user()->papel == 'admin') {
+        if (Auth::user()->papel == 'adminSistema') {
             $insert = $this->setor->insert($data_form);
             if ($insert) {
                 return redirect('/setores');
@@ -61,7 +61,7 @@ class setorController extends Controller
     public function editar(Request $request){
 
         $data_form = $request->only(['idSetor','nomeSetor','descricaoSetor','responsavelSetor']);
-        if (Auth::user()->papel == 'admin') {
+        if (Auth::user()->papel == 'adminSistema') {
             $update = DB::table('setors')
                 ->where('id', $data_form['idSetor'])
                 ->update(['nomeSetor' => $data_form['nomeSetor'],'descricaoSetor' => $data_form['descricaoSetor'],'responsavelSetor' => $data_form['responsavelSetor']]);
@@ -78,7 +78,7 @@ class setorController extends Controller
     }
 
     public function excluirSetor($id){
-        if (Auth::user()->papel == 'admin') {
+        if (Auth::user()->papel == 'adminSistema') {
             $delete = DB::table('setors')->where('id', '=', $id)->delete();
 
             if ($delete) {
@@ -93,19 +93,26 @@ class setorController extends Controller
     }
 
     public function cadSetor(){
+        if (Auth::user()->papel == 'adminSistema') {
 
         $users = DB::table('users')->where('papel', '=', 'admin')->get();
 
         return view('setores.cadSetor', compact('users'));
+        }else{
+            return redirect('/home');
+        }
     }
 
     public function updateSetor($id){
-
+        if (Auth::user()->papel == 'adminSistema') {
         $setor = $this->setor->find($id);
 
         $users = DB::table('users')->where('papel', '=', 'admin')->get();
 
         return view('setores.updateSetor', compact('users','setor'));
+        }else{
+            return redirect('/home');
+        }
 
     }
 
