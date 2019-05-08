@@ -1,6 +1,9 @@
+@if(Auth::check())
+    <script>window.location = "/home";</script>
+@else
+
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
-
 <div class="container">
     <div class="row">
         <div class="md-10 col-12">
@@ -14,3 +17,4 @@
         
     </div>
 </div>
+@endcan
