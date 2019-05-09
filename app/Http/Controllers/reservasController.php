@@ -19,7 +19,7 @@ class reservasController extends Controller
 
     public function indexReservas(){
         
-        if(Auth::user()->papel == 'user'){
+        if(Auth::user()->papel == 'servidor'){
         $reservas = DB::table('reservas')->where( 'user_id','=',Auth::user()->id)->get();
         $user = Auth::user()->nome;
 
@@ -35,7 +35,7 @@ class reservasController extends Controller
         $data = date("Y-m-d");
         $user = Auth::user()->id;
 
-        if(Auth::user()->papel == 'user'){
+        if(Auth::user()->papel == 'servidor'){
            $insert = DB::table('reservas')->insert(
                 ['inicioReserva' => $data_form['inicioReserva'],
                  'fimReserva' => $data_form['fimReserva'],
@@ -57,8 +57,7 @@ class reservasController extends Controller
     }
 
     public function deleteReservas($id){
-        // Verificar se apenas o usuário dono da reserva vai ser possivel deletar sua reserva
-        if(Auth::user()->papel == 'user'){
+        if(Auth::user()->papel == 'servidor'){
             $delete = DB::table('reservas')->where('id', '=', $id)->delete();
 
             if($delete){
@@ -77,7 +76,7 @@ class reservasController extends Controller
 
         $data_form = $request->only(['nomeUser','dataReserva','inicioReserva','fimReserva']);
         $user = Auth::user()->id;
-        if(Auth::user()->papel == 'user'){
+        if(Auth::user()->papel == 'servidor'){
             $objeto = $this->objeto->find($data_form['idObj']);
 
             $update = $objeto->update([
