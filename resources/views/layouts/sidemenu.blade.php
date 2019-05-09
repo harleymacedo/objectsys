@@ -17,25 +17,33 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#objSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fas fa-boxes"></i>
                         Objetos
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <ul class="collapse list-unstyled" id="objSubmenu">
                         <li>
-                            <a href="{{ route('cadastrarObjetos') }}">Cadastrar Objetos</a>
+                            <a class="submenu" href="{{ route('cadastrarObjetos') }}"><i class="fas fa-plus-square"></i>Cadastrar Objetos</a>
                         </li>
                         <li>
-                            <a href="{{ route('listarObjetos') }}">Listar Objetos</a>
+                            <a class="submenu" href="{{ route('listarObjetos') }}"><i class="fas fa-list-ul"></i>Listar Objetos</a>
                         </li>
                     </ul>
                 </li>
                 @can('gerenciarUsuarios')
-                <li>
-                    <a href="{{ route('cadastrarUser') }}">
-                        <i class="fas fa-user-plus"></i>
-                        Cadastrar Usuário
+                <li class="active">
+                    <a href="#usuariosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-user"></i>
+                        Usuários
                     </a>
+                    <ul class="collapse list-unstyled" id="usuariosSubmenu">
+                        <li>
+                            <a class="submenu" href="{{ route('cadastrarUser') }}"><i class="fas fa-user-plus"></i>Cadastrar Usuários</a>
+                        </li>
+                        <li>
+                            <a class="submenu" href="{{ route('listarUser') }}"><i class="fas fa-list-ul"></i>Listar Usuários</a>
+                        </li>
+                    </ul>
                 </li>
                 @endcan
                 @can('fazerReserva')
@@ -54,10 +62,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{ route('cadastrarSetor') }}">Cadastrar Setor</a>
+                            <a class="submenu" href="{{ route('cadastrarSetor') }}">Cadastrar Setor</a>
                         </li>
                         <li>
-                            <a href="{{ route('listarSetor') }}">Listar Setores</a>
+                            <a class="submenu" href="{{ route('listarSetor') }}">Listar Setores</a>
                         </li>
                     </ul>
                 </li>

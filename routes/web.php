@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     // Rota para criar novo usuário
     Route::post('salvar/user', 'userController@novoUser')->name('salvarUser');
     Route::get('cadastrar/user', 'userController@cadUser')->name('cadastrarUser');
+    Route::get('/users', 'userController@listUser')->name('listarUser');
 
     // Rotas para o controle de objetos
     Route::get('/cadastrar/objeto', 'objetosController@cadObj')->name('cadastrarObjetos');

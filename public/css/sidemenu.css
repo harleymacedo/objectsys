@@ -1,8 +1,3 @@
-/*
-    DEMO STYLE
-*/
-
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -21,7 +16,7 @@ a:hover,
 a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 
 .navbar {
@@ -65,7 +60,7 @@ span {
     max-width: 250px;
     background: #7386D5;
     color: #fff;
-    transition: all 0.3s;
+    transition: all .4s;
 }
 
 #sidebar.active {
@@ -146,7 +141,7 @@ span {
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #6b7ece;
 }
 
 a[data-toggle="collapse"] {
@@ -164,7 +159,8 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #8592cc;
+    
 }
 
 ul.CTAs {
