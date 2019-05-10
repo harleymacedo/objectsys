@@ -23,25 +23,25 @@
                     </a>
                     <ul class="collapse list-unstyled" id="objSubmenu">
                         <li>
-                            <a class="submenu" href="{{ route('cadastrarObjetos') }}"><i class="fas fa-plus-square"></i>Cadastrar Objetos</a>
+                            <a href="{{ route('cadastrarObjetos') }}"><i class="fas fa-plus-square"></i>Cadastrar Objetos</a>
                         </li>
                         <li>
-                            <a class="submenu" href="{{ route('listarObjetos') }}"><i class="fas fa-list-ul"></i>Listar Objetos</a>
+                            <a href="{{ route('listarObjetos') }}"><i class="fas fa-list-ul"></i>Listar Objetos</a>
                         </li>
                     </ul>
                 </li>
                 @can('gerenciarUsuarios')
-                <li class="active">
+                <li class="active submenu">
                     <a href="#usuariosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fas fa-user"></i>
                         Usuários
                     </a>
                     <ul class="collapse list-unstyled" id="usuariosSubmenu">
                         <li>
-                            <a class="submenu" href="{{ route('cadastrarUser') }}"><i class="fas fa-user-plus"></i>Cadastrar Usuários</a>
+                            <a href="{{ route('cadastrarUser') }}"><i class="fas fa-user-plus"></i>Cadastrar Usuários</a>
                         </li>
                         <li>
-                            <a class="submenu" href="{{ route('listarUser') }}"><i class="fas fa-list-ul"></i>Listar Usuários</a>
+                            <a href="{{ route('listarUser') }}"><i class="fas fa-list-ul"></i>Listar Usuários</a>
                         </li>
                     </ul>
                 </li>
@@ -55,17 +55,17 @@
                 </li>
                 @endcan
                 @can('gerenciarSistema')
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <li class="active submenu">
+                    <a href="#setorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fas fa-store-alt"></i>
                         Setores
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <ul class="collapse list-unstyled" id="setorSubmenu">
                         <li>
-                            <a class="submenu" href="{{ route('cadastrarSetor') }}">Cadastrar Setor</a>
+                            <a href="{{ route('cadastrarSetor') }}"><i class="fas fa-plus-square"></i>Cadastrar Setor</a>
                         </li>
                         <li>
-                            <a class="submenu" href="{{ route('listarSetor') }}">Listar Setores</a>
+                            <a href="{{ route('listarSetor') }}"><i class="fas fa-list-ul"></i>Listar Setores</a>
                         </li>
                     </ul>
                 </li>

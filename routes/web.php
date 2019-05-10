@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('salvar/user', 'userController@novoUser')->name('salvarUser');
     Route::get('cadastrar/user', 'userController@cadUser')->name('cadastrarUser');
     Route::get('/users', 'userController@listUser')->name('listarUser');
+    Route::post('/atualizar/permissao/{id}', 'userController@alterarPermissao')->name('alterarPermissao');
 
     // Rotas para o controle de objetos
     Route::get('/cadastrar/objeto', 'objetosController@cadObj')->name('cadastrarObjetos');

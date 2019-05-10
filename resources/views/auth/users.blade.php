@@ -10,7 +10,7 @@
                 <div class="col-sm-12">
                     <span class="titulo h1 mb-1 mt-1 float-left">Usuários</span>
                     @can('gerenciarSistema')
-                    <a href="/cadastrar/adminsis" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Novo Administrador do Sistema</a>
+                    <a href="/cadastrar/adminsistema" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Novo Administrador do Sistema</a>
                     @endcan
                 </div>
             </div>
@@ -56,17 +56,68 @@
                                 <tr>
                                     <th scope="row">{{$user->nome}}</th>
                                     <td>{{$user->papel}}</td>
-                                    <td>
-                                        <a href="/update/user" class="btn btn-primary"><i class="fas fa-user-edit"></i></a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#m">
-                                                <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#m{{$user->id}}">
+                                                <i class="fas fa-user-edit"></i>
+                                            </button>
+                                        </td>
                                 </tr>
                             </tbody>
                         @endforeach
                     </table>
                 </div> 
+    @can('gerenciarObjetos')
+        @foreach ($users as $user)
+            <div class="modal fade" id="m{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Deseja deletar o(a)</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-center mb-1 mt-1">
+                                <div class="col-sm-12">
+                                    <form action="/atualizar/permissao/{{$user->id}}" method="POST">
+                                        @csrf
+                                        <div class="form-row">
+                                        <div class="input-group form-group col-sm-12">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text" for="nomeUser"><i class="far fa-user"></i></label>
+                                                </div>
+                                                <input class="form-control" type="text" name="nomeUser" id="nomeUser" readonly="true" disabled value="{{$user->nome}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="input-group mb-3 col-sm-12">
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="papelUser">Novo Papel</label>
+                                            </div>
+                                            <select class="custom-select" id="papelUser" name="papelUser">
+                                                    <option value="adminObjeto">Administrador de Objeto</option>
+                                                    <option value="servidor">Servidor</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="form-row">
+                                                <div class="form-group col-sm-12">
+                                                    <button class="btn btn-success form-group" type="submit">Atualizar</button>
+                                                    <button type="button" class="btn btn-primary form-group" data-dismiss="modal">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endcan
         @else
         <script>window.location = "/home";</script>
     @endcan

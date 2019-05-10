@@ -57,8 +57,33 @@ class userController extends Controller
 
     public function listUser(){
 
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->where('papel','!=', 'adminSistema')->select('nome','id','papel')->get();
 
         return view('auth.users', compact('users'));
+    }
+
+    public function alterarPermissao($id, Request $request){
+
+        $papel = $request->only(['papelUser']);
+        $papel2 = $papel['papelUser'];
+        if (Auth::user()->papel == 'adminSistema') {
+            DB::table('users')
+                    ->where('id' , $id)
+                    ->update(['papel' => $papel2]);
+            
+            if($papel2 == 'adminObjeto'){
+                DB::table('role_user')
+                    ->where('user_id', $id)
+                    ->update(['role_id' =>'2']);
+            }elseif($papel2 == 'servidor'){
+                DB::table('role_user')
+                    ->where('user_id', $id)
+                    ->update(['role_id' =>'3']);
+            }else{
+                return view('home');
+            }
+
+            return $this->listUser();
+        }
     }
 }

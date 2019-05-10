@@ -187,6 +187,10 @@ a.article:hover {
     color: #fff !important;
 }
 
+.submenu {
+    background: #6b7ece;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
