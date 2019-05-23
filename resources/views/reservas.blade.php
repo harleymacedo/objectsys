@@ -3,19 +3,17 @@
 
 @section('contentpage')
 
-@can('fazerReservas')
+@can('fazerReserva')
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <div class="container">
-    {{-- Div para busca de objetos --}}
-
+    
     <div class="row mt-4">
         <div class="col-sm-12">
             <span class="titulo h1 mb-1 mt-1 float-left">Objetos</span>
             <a href="/objetos" class="btn_color btn btn-outline-primary mb-1 mt-1 float-right">Fazer Nova Reserva</a>
         </div>
     </div>
-
     <div class="row justify-content-center mb-1 mt-1">
         <div class="col-sm-12">
             <form action="/buscar/reserva" method="POST">
@@ -46,38 +44,25 @@
         </div>
     </div>
 
-    {{-- Div para listagem de objetos  --}}
-    <div class="row card">
-        <div class="col-sm-12">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Horário de Início</th>
-                        <th scope="col">Horário de Término</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                @foreach ($reservas as $reserva)
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{$user}}</th>
-                            <td>{{$reserva->dataReserva}}</td>
-                            <td>{{$reserva->inicioReserva}}</td>
-                            <td>{{$reserva->fimReserva}}</td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#u{{$reserva->id}}">
-                                    <i class="fas fa-edit"></i>
-                            </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#r{{$reserva->id}}">
-                                        <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>                           
-                        </tr>
-                    </tbody>
-                @endforeach
-            </table>
+    {{-- Div para listagem das reservas  --}}
+    <div class="card-columns">
+        @foreach ($reservas as $reserva)
+            <div class="card">
+                <div class="card-header">{{$user}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">Data da Reserva: {{$reserva->dataReserva}}</h5>
+                    <p class="card-text">Horario: {{$reserva->inicioReserva}} - {{$reserva->fimReserva}}</p>
+                </div>
+                <div class="card-footer border-primary">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#u{{$reserva->id}}">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#r{{$reserva->id}}">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                </div>
+            </div>
+        @endforeach
     </div>
 
     {{-- Cancelamento de reservas --}}
@@ -92,6 +77,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <p>Data da Reserva: {{$reserva->dataReserva}}</p>
+                        <p>Horario: {{$reserva->inicioReserva}} - {{$reserva->fimReserva}}</p>
                         Após a confirmação sua reserva será cancelada.
                     </div>
                     <div class="modal-footer">

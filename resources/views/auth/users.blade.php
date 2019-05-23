@@ -72,7 +72,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Deseja deletar o(a)</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Deseja alterar as permissões do usuário {{ $user->nome }} </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -83,7 +83,7 @@
                                     <form action="/atualizar/permissao/{{$user->id}}" method="POST">
                                         @csrf
                                         <div class="form-row">
-                                        <div class="input-group form-group col-sm-12">
+                                        <div class="input-group form-group">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text" for="nomeUser"><i class="far fa-user"></i></label>
                                                 </div>
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                         <div class="form-row">
-                                            <div class="input-group mb-3 col-sm-12">
+                                            <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="papelUser">Novo Papel</label>
                                             </div>
@@ -104,7 +104,7 @@
                                         <div class="modal-footer">
                                             <div class="form-row">
                                                 <div class="form-group col-sm-12">
-                                                    <button class="btn btn-success form-group" type="submit">Atualizar</button>
+                                                    <button class="btn btn-warning form-group" type="submit">Atualizar</button>
                                                     <button type="button" class="btn btn-primary form-group" data-dismiss="modal">Cancelar</button>
                                                 </div>
                                             </div>

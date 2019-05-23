@@ -39,37 +39,24 @@
         </div>
     </div>
 
-    <div class="row card">
-        <div class="col-sm-12">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Responsável</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                @foreach ($setors as $setor)
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{$setor->nomeSetor}}</th>
-                            <td>{{$setor->descricaoSetor}}</td>
-
-                            <td>{{$setor->nome}}</td>
-
-                            <td>
-                                <a href="/update/setor/{{$setor->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#m{{$setor->id}}">
-                                        <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                @endforeach
-            </table>
-        </div>
+    <div class="card-columns">
+        @foreach ($setors as $setor)
+            <div class="card">
+                <div class="card-header">{{$setor->nomeSetor}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{$setor->nome}}</h5>
+                    <p class="card-text">{{$setor->descricaoSetor}}</p>
+                </div>
+                <div class="card-footer border-primary">
+                    <a href="/update/setor/{{$setor->id}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#m{{$setor->id}}">
+                            <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
+        @endforeach
     </div>
+
     @foreach ($setors as $setor)
         <div class="modal fade" id="m{{$setor->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

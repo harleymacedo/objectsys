@@ -18,12 +18,11 @@ class reservasController extends Controller
     // }
 
     public function indexReservas(){
-        
+
         if(Auth::user()->papel == 'servidor'){
         $reservas = DB::table('reservas')->where( 'user_id','=',Auth::user()->id)->get();
         $user = Auth::user()->nome;
-
-        return view('reservas',compact('reservas', 'user'));
+        return view('reservas', compact('reservas', 'user'));
         }else{
         return redirect('/home');
         }

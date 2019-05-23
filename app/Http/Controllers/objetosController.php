@@ -38,7 +38,7 @@ class objetosController extends Controller
 
         $data_form = $request->only(['nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj']);
 
-        if(Auth::user()->papel == 'adminObjeto'){
+        if(Auth::user()->papel == 'adminObjeto' or Auth::user()->papel == 'adminSistema' ){
             $insert = $this->objeto->insert($data_form);
             if ($insert) {
                 return redirect('/objetos');
@@ -55,7 +55,7 @@ class objetosController extends Controller
     public function editarObj(Request $request){
 
         $data_form = $request->only(['idObj','nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj']);
-        if(Auth::user()->papel == 'adminObjeto'){
+        if(Auth::user()->papel == 'adminObjeto' or Auth::user()->papel == 'adminSistema' ){
             $objeto = $this->objeto->find($data_form['idObj']);
 
             $update = $objeto->update([
@@ -79,7 +79,7 @@ class objetosController extends Controller
     }
 
     public function excluirObj($id){
-        if(Auth::user()->papel == 'adminObjeto'){
+        if(Auth::user()->papel == 'adminObjeto' or Auth::user()->papel == 'adminSistema' ){
             $delete = DB::table('objetos')->where('id', '=', $id)->delete();
 
             if($delete){
