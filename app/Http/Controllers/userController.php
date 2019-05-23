@@ -66,7 +66,7 @@ class userController extends Controller
 
         $papel = $request->only(['papelUser']);
         $papel2 = $papel['papelUser'];
-        if (Auth::user()->papel == 'adminSistema') {
+        if (Auth::user()->papel == 'adminSistema' or Auth::user()->papel == 'adminObjeto') {
             DB::table('users')
                     ->where('id' , $id)
                     ->update(['papel' => $papel2]);
