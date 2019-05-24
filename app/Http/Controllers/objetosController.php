@@ -39,7 +39,13 @@ class objetosController extends Controller
         $data_form = $request->only(['nomeObj','descricaoObj','situacaoObj','categoriaObj','setorObj']);
 
         if(Auth::user()->papel == 'adminObjeto' or Auth::user()->papel == 'adminSistema' ){
-            $insert = $this->objeto->insert($data_form);
+            $insert = DB::table('objetos')->insert(
+                ['nomeObj' => $data_form['nomeObj'],
+                 'descricaoObj' => $data_form['descricaoObj'],
+                 'situacaoObj' => $data_form['situacaoObj'],
+                 'categoriaObj' => $data_form['categoriaObj'],
+                 'setorObj' => $data_form['setorObj']]
+            );
             if ($insert) {
                 return redirect('/objetos');
             }
