@@ -1,6 +1,7 @@
 @if(Auth::check())
     <script>window.location = "/home";</script>
 @else
+<title>ObjectSys</title>
 
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
